@@ -12,5 +12,13 @@
         <edge from="n1" to="n1"><attr name="label"><string>type:Space</string></attr></edge>
         <edge from="n1" to="n1"><attr name="label"><string>let: x=0</string></attr></edge>
         <edge from="n1" to="n1"><attr name="label"><string>let: y=0</string></attr></edge>
+        
+        <node id="n2"/>
+        <edge from="n2" to="n2"><attr name="label"><string>type:Player</string></attr></edge>
+        <node id="n3"/>
+        <edge from="n3" to="n3"><attr name="label"><string>type:Player</string></attr></edge>
+        <edge from="n2" to="n3"><attr name="label"><string>nextPlayer</string></attr></edge>
+        <edge from="n3" to="n2"><attr name="label"><string>nextPlayer</string></attr></edge>
+        <edge from="n0" to="n2"><attr name="label"><string>currentPlayer</string></attr></edge>
     </graph>
 </gxl>
