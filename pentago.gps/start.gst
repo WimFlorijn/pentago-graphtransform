@@ -20,5 +20,25 @@
         <edge from="n2" to="n3"><attr name="label"><string>nextPlayer</string></attr></edge>
         <edge from="n3" to="n2"><attr name="label"><string>nextPlayer</string></attr></edge>
         <edge from="n0" to="n2"><attr name="label"><string>currentPlayer</string></attr></edge>
+        
+        <node id="n4"/>
+        <edge from="n4" to="n4"><attr name="label"><string>type:Direction</string></attr></edge>
+        <edge from="n4" to="n4"><attr name="label"><string>let:dx=1</string></attr></edge>
+        <edge from="n4" to="n4"><attr name="label"><string>let:dy=0</string></attr></edge>
+        
+        <node id="n5"/>
+        <edge from="n5" to="n5"><attr name="label"><string>type:Direction</string></attr></edge>
+        <edge from="n5" to="n5"><attr name="label"><string>let:dx=0</string></attr></edge>
+        <edge from="n5" to="n5"><attr name="label"><string>let:dy=1</string></attr></edge>
+        
+        <node id="n6"/>
+        <edge from="n6" to="n6"><attr name="label"><string>type:Direction</string></attr></edge>
+        <edge from="n6" to="n6"><attr name="label"><string>let:dx=1</string></attr></edge>
+        <edge from="n6" to="n6"><attr name="label"><string>let:dy=1</string></attr></edge>
+        
+        <node id="n7"/>
+        <edge from="n7" to="n7"><attr name="label"><string>type:Direction</string></attr></edge>
+        <edge from="n7" to="n7"><attr name="label"><string>let:dx=1</string></attr></edge>
+        <edge from="n7" to="n7"><attr name="label"><string>let:dy=-1</string></attr></edge>
     </graph>
 </gxl>
