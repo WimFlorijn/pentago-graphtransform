@@ -34,11 +34,6 @@
                 <string>921 167 35 18</string>
             </attr>
         </node>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>type:Player</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>on</string>
@@ -49,17 +44,22 @@
                 <string>on</string>
             </attr>
         </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Player</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n5">
+            <attr name="label">
+                <string>on</string>
+            </attr>
+        </edge>
         <edge from="n0" to="n3">
             <attr name="label">
                 <string>on</string>
             </attr>
         </edge>
         <edge from="n0" to="n4">
-            <attr name="label">
-                <string>on</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n5">
             <attr name="label">
                 <string>on</string>
             </attr>
@@ -84,17 +84,12 @@
                 <string>upright</string>
             </attr>
         </edge>
-        <edge from="n3" to="n3">
-            <attr name="label">
-                <string>type:Space</string>
-            </attr>
-        </edge>
         <edge from="n3" to="n4">
             <attr name="label">
                 <string>upright</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>type:Space</string>
             </attr>
@@ -102,6 +97,11 @@
         <edge from="n4" to="n5">
             <attr name="label">
                 <string>upright</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>type:Space</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">

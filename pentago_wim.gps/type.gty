@@ -21,12 +21,20 @@
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
+                <string>right</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 331 267 433 266 331 267 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
                 <string>type:Space</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>down</string>
+                <string>downright</string>
             </attr>
             <attr name="layout">
                 <string>500 0 331 267 433 266 331 267 11</string>
@@ -42,7 +50,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>downright</string>
+                <string>upright</string>
             </attr>
             <attr name="layout">
                 <string>500 0 331 267 433 266 331 267 11</string>
@@ -50,15 +58,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>left</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>right</string>
+                <string>down</string>
             </attr>
             <attr name="layout">
                 <string>500 0 331 267 433 266 331 267 11</string>
@@ -82,7 +82,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>upright</string>
+                <string>left</string>
             </attr>
             <attr name="layout">
                 <string>500 0 331 267 433 266 331 267 11</string>
@@ -93,24 +93,24 @@
                 <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>in=1:out=1:nextPlayer</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n0">
             <attr name="label">
                 <string>on</string>
             </attr>
         </edge>
-        <edge from="n2" to="n2">
+        <edge from="n1" to="n1">
             <attr name="label">
-                <string>type:Game</string>
+                <string>in=1:out=1:nextPlayer</string>
             </attr>
         </edge>
         <edge from="n2" to="n1">
             <attr name="label">
                 <string>currentPlayer</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Game</string>
             </attr>
         </edge>
     </graph>

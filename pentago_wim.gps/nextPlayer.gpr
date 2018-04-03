@@ -19,11 +19,6 @@
                 <string>266 245 38 18</string>
             </attr>
         </node>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>type:Game</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>del:currentPlayer</string>
@@ -32,6 +27,11 @@
         <edge from="n0" to="n2">
             <attr name="label">
                 <string>new:currentPlayer</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Game</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

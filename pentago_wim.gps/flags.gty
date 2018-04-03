@@ -31,27 +31,7 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>type:Space</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
                 <string>flag:place1</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>flag:place2</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>flag:place3</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>flag:place4</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -61,7 +41,27 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
+                <string>flag:place2</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
                 <string>flag:place6</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>flag:place9</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>flag:place3</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Space</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -76,17 +76,17 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>flag:place9</string>
-            </attr>
-        </edge>
-        <edge from="n6" to="n6">
-            <attr name="label">
-                <string>type:Black</string>
+                <string>flag:place4</string>
             </attr>
         </edge>
         <edge from="n6" to="n0">
             <attr name="label">
                 <string>sub:</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>type:Black</string>
             </attr>
         </edge>
         <edge from="n7" to="n7">
