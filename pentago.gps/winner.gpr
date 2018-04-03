@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+    <graph role="rule" edgeids="false" edgemode="directed" id="winner">
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n0"/>
+        <edge from="n0" to="n0"><attr name="label"><string>type:Player</string></attr></edge>
+        
+        <node id="n1"/>
+        <edge from="n1" to="n1"><attr name="label"><string>type:Direction</string></attr></edge>
+        <edge from="n1" to="n1"><attr name="label"><string>id:d</string></attr></edge>
+        
+        <node id="n2"/>
+        <node id="n3"/>
+        <node id="n4"/>
+        <node id="n5"/>
+        <node id="n6"/>
+        <edge from="n2" to="n2"><attr name="label"><string>type:Space</string></attr></edge>
+        <edge from="n3" to="n3"><attr name="label"><string>type:Space</string></attr></edge>
+        <edge from="n4" to="n4"><attr name="label"><string>type:Space</string></attr></edge>
+        <edge from="n5" to="n5"><attr name="label"><string>type:Space</string></attr></edge>
+        <edge from="n6" to="n6"><attr name="label"><string>type:Space</string></attr></edge>
+        <edge from="n0" to="n2"><attr name="label"><string>marble</string></attr></edge>
+        <edge from="n0" to="n3"><attr name="label"><string>marble</string></attr></edge>
+        <edge from="n0" to="n4"><attr name="label"><string>marble</string></attr></edge>
+        <edge from="n0" to="n5"><attr name="label"><string>marble</string></attr></edge>
+        <edge from="n0" to="n6"><attr name="label"><string>marble</string></attr></edge>
+        <edge from="n2" to="n2"><attr name="label"><string>id:b</string></attr></edge>
+        <edge from="n3" to="n3"><attr name="label"><string>test:x==b.x+1*d.dx</string></attr></edge>
+        <edge from="n4" to="n4"><attr name="label"><string>test:x==b.x+2*d.dx</string></attr></edge>
+        <edge from="n5" to="n5"><attr name="label"><string>test:x==b.x+3*d.dx</string></attr></edge>
+        <edge from="n6" to="n6"><attr name="label"><string>test:x==b.x+4*d.dx</string></attr></edge>
+        <edge from="n3" to="n3"><attr name="label"><string>test:y==b.y+1*d.dy</string></attr></edge>
+        <edge from="n4" to="n4"><attr name="label"><string>test:y==b.y+2*d.dy</string></attr></edge>
+        <edge from="n5" to="n5"><attr name="label"><string>test:y==b.y+3*d.dy</string></attr></edge>
+        <edge from="n6" to="n6"><attr name="label"><string>test:y==b.y+4*d.dy</string></attr></edge>
+    </graph>
+</gxl>
