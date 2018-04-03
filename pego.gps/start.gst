@@ -9,9 +9,9 @@
         <edge from="n0" to="n0"><attr name="label"><string>let: blocks=2</string></attr></edge>
         
         <node id="n1"/>
-        <edge from="n1" to="n1"><attr name="label"><string>type:Space</string></attr></edge>
-        <edge from="n1" to="n1"><attr name="label"><string>let: x=0</string></attr></edge>
-        <edge from="n1" to="n1"><attr name="label"><string>let: y=0</string></attr></edge>
+        <edge from="n1" to="n1"><attr name="label"><string>type:Block</string></attr></edge>
+        <edge from="n1" to="n1"><attr name="label"><string>let: bx=0</string></attr></edge>
+        <edge from="n1" to="n1"><attr name="label"><string>let: by=0</string></attr></edge>
         
         <node id="n2"/>
         <edge from="n2" to="n2"><attr name="label"><string>type:Player</string></attr></edge>
