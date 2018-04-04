@@ -11,29 +11,45 @@
         <edge from="n1" to="n1"><attr name="label"><string>type:Direction</string></attr></edge>
         <edge from="n1" to="n1"><attr name="label"><string>id:d</string></attr></edge>
         
-        <node id="n2"/>
-        <node id="n3"/>
-        <node id="n4"/>
-        <node id="n5"/>
-        <node id="n6"/>
-        <edge from="n2" to="n2"><attr name="label"><string>type:Space</string></attr></edge>
-        <edge from="n3" to="n3"><attr name="label"><string>type:Space</string></attr></edge>
-        <edge from="n4" to="n4"><attr name="label"><string>type:Space</string></attr></edge>
-        <edge from="n5" to="n5"><attr name="label"><string>type:Space</string></attr></edge>
-        <edge from="n6" to="n6"><attr name="label"><string>type:Space</string></attr></edge>
-        <edge from="n0" to="n2"><attr name="label"><string>marble</string></attr></edge>
-        <edge from="n0" to="n3"><attr name="label"><string>marble</string></attr></edge>
-        <edge from="n0" to="n4"><attr name="label"><string>marble</string></attr></edge>
-        <edge from="n0" to="n5"><attr name="label"><string>marble</string></attr></edge>
-        <edge from="n0" to="n6"><attr name="label"><string>marble</string></attr></edge>
-        <edge from="n2" to="n2"><attr name="label"><string>id:b</string></attr></edge>
-        <edge from="n3" to="n3"><attr name="label"><string>test:x==b.x+1*d.dx</string></attr></edge>
-        <edge from="n4" to="n4"><attr name="label"><string>test:x==b.x+2*d.dx</string></attr></edge>
-        <edge from="n5" to="n5"><attr name="label"><string>test:x==b.x+3*d.dx</string></attr></edge>
-        <edge from="n6" to="n6"><attr name="label"><string>test:x==b.x+4*d.dx</string></attr></edge>
-        <edge from="n3" to="n3"><attr name="label"><string>test:y==b.y+1*d.dy</string></attr></edge>
-        <edge from="n4" to="n4"><attr name="label"><string>test:y==b.y+2*d.dy</string></attr></edge>
-        <edge from="n5" to="n5"><attr name="label"><string>test:y==b.y+3*d.dy</string></attr></edge>
-        <edge from="n6" to="n6"><attr name="label"><string>test:y==b.y+4*d.dy</string></attr></edge>
+        <node id="n11"/>
+        <node id="n12"/>
+        <node id="n13"/>
+        <node id="n14"/>
+        <node id="n15"/>
+        <edge from="n11" to="n11"><attr name="label"><string>type:Space</string></attr></edge>
+        <edge from="n12" to="n12"><attr name="label"><string>type:Space</string></attr></edge>
+        <edge from="n13" to="n13"><attr name="label"><string>type:Space</string></attr></edge>
+        <edge from="n14" to="n14"><attr name="label"><string>type:Space</string></attr></edge>
+        <edge from="n15" to="n15"><attr name="label"><string>type:Space</string></attr></edge>
+        
+        <node id="n21"/>
+        <node id="n22"/>
+        <node id="n23"/>
+        <node id="n24"/>
+        <edge from="n21" to="n21"><attr name="label"><string>type:Next</string></attr></edge>
+        <edge from="n22" to="n22"><attr name="label"><string>type:Next</string></attr></edge>
+        <edge from="n23" to="n23"><attr name="label"><string>type:Next</string></attr></edge>
+        <edge from="n24" to="n24"><attr name="label"><string>type:Next</string></attr></edge>
+        
+        <edge from="n11" to="n21"><attr name="label"><string>in</string></attr></edge>
+        <edge from="n12" to="n22"><attr name="label"><string>in</string></attr></edge>
+        <edge from="n13" to="n23"><attr name="label"><string>in</string></attr></edge>
+        <edge from="n14" to="n24"><attr name="label"><string>in</string></attr></edge>
+        
+        <edge from="n21" to="n12"><attr name="label"><string>out</string></attr></edge>
+        <edge from="n22" to="n13"><attr name="label"><string>out</string></attr></edge>
+        <edge from="n23" to="n14"><attr name="label"><string>out</string></attr></edge>
+        <edge from="n24" to="n15"><attr name="label"><string>out</string></attr></edge>
+        
+        <edge from="n21" to="n1"><attr name="label"><string>dir</string></attr></edge>
+        <edge from="n22" to="n1"><attr name="label"><string>dir</string></attr></edge>
+        <edge from="n23" to="n1"><attr name="label"><string>dir</string></attr></edge>
+        <edge from="n24" to="n1"><attr name="label"><string>dir</string></attr></edge>
+        
+        <edge from="n0" to="n11"><attr name="label"><string>marble</string></attr></edge>
+        <edge from="n0" to="n12"><attr name="label"><string>marble</string></attr></edge>
+        <edge from="n0" to="n13"><attr name="label"><string>marble</string></attr></edge>
+        <edge from="n0" to="n14"><attr name="label"><string>marble</string></attr></edge>
+        <edge from="n0" to="n15"><attr name="label"><string>marble</string></attr></edge>
     </graph>
 </gxl>
