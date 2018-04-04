@@ -1,0 +1,5 @@
+alap {
+  placeMarble;
+  rotateClockwise | rotateCounterClockwise;
+  nextPlayer;
+}

@@ -1,33 +1,88 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="setRotations">
+    <graph role="rule" edgeids="false" edgemode="directed" id="setDirections">
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0"/>
-        <edge from="n0" to="n0"><attr name="label"><string>type:Direction</string></attr></edge>
-        <edge from="n0" to="n0"><attr name="label"><string>id:d</string></attr></edge>
-        
-        <node id="n1"/>
-        <edge from="n1" to="n1"><attr name="label"><string>type:Space</string></attr></edge>
-        <edge from="n1" to="n1"><attr name="label"><string>id:a</string></attr></edge>
-        <node id="n2"/>
-        <edge from="n2" to="n2"><attr name="label"><string>type:Space</string></attr></edge>
-        
-        <edge from="n2" to="n2"><attr name="label"><string>test: x-int:a.x == d.dx</string></attr></edge>
-        <edge from="n2" to="n2"><attr name="label"><string>test: y-int:a.y == d.dy</string></attr></edge>
-        
-        <node id="n3"/>
-        <edge from="n3" to="n3"><attr name="label"><string>type:Next</string></attr></edge>
-        <edge from="n3" to="n3"><attr name="label"><string>cnew:</string></attr></edge>
-        <edge from="n1" to="n3"><attr name="label"><string>cnew:in</string></attr></edge>
-        <edge from="n3" to="n2"><attr name="label"><string>cnew:out</string></attr></edge>
-        <edge from="n3" to="n0"><attr name="label"><string>cnew:dir</string></attr></edge>
-        
-        <!-- <node id="n4"/> -->
-        <!-- <edge from="n4" to="n4"><attr name="label"><string>forall:</string></attr></edge> -->
-        <!-- <edge from="n0" to="n4"><attr name="label"><string>at</string></attr></edge> -->
-        <!-- <edge from="n1" to="n4"><attr name="label"><string>at</string></attr></edge> -->
-        <!-- <edge from="n2" to="n4"><attr name="label"><string>at</string></attr></edge> -->
-            </graph>
+        <node id="n0">
+            <attr name="layout">
+                <string>10 111 75 18</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>175 8 53 18</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>159 173 85 54</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>109 92 29 18</string>
+            </attr>
+        </node>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>id:d</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Direction</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>id:a</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Space</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n3">
+            <attr name="label">
+                <string>cnew:in</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Space</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>test:x-int:a.x == d.dx</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>test:y-int:a.y == d.dy</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>cnew:</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>type:Next</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n0">
+            <attr name="label">
+                <string>cnew:dir</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n2">
+            <attr name="label">
+                <string>cnew:out</string>
+            </attr>
+        </edge>
+    </graph>
 </gxl>

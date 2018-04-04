@@ -4,15 +4,50 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0"/>
-        <edge from="n0" to="n0"><attr name="label"><string>type:Game</string></attr></edge>
-        
-        <node id="n1"/>
-        <edge from="n1" to="n1"><attr name="label"><string>type:Player</string></attr></edge>
-        <edge from="n0" to="n1"><attr name="label"><string>del:currentPlayer</string></attr></edge>
-        <node id="n2"/>
-        <edge from="n2" to="n2"><attr name="label"><string>type:Player</string></attr></edge>
-        <edge from="n1" to="n2"><attr name="label"><string>nextPlayer</string></attr></edge>
-        <edge from="n0" to="n2"><attr name="label"><string>new:currentPlayer</string></attr></edge>
+        <node id="n0">
+            <attr name="layout">
+                <string>10 30 35 18</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>73 101 38 18</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>104 10 38 18</string>
+            </attr>
+        </node>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Game</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>new:currentPlayer</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>del:currentPlayer</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Player</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>nextPlayer</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Player</string>
+            </attr>
+        </edge>
     </graph>
 </gxl>

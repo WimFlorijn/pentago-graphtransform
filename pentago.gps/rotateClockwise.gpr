@@ -4,26 +4,95 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0"/>
-        <edge from="n0" to="n0"><attr name="label"><string>type:Block</string></attr></edge>
-        
-        <node id="n1"/>
-        <edge from="n1" to="n1"><attr name="label"><string>type:Space</string></attr></edge>
-        <edge from="n1" to="n0"><attr name="label"><string>belongsTo</string></attr></edge>
-        <node id="n2"/>
-        <edge from="n2" to="n2"><attr name="label"><string>type:Space</string></attr></edge>
-        <edge from="n2" to="n0"><attr name="label"><string>belongsTo</string></attr></edge>
-        <edge from="n1" to="n2"><attr name="label"><string>cw</string></attr></edge>
-        
-        <node id="n3"/>
-        <edge from="n3" to="n3"><attr name="label"><string>type:Player</string></attr></edge>
-        <edge from="n3" to="n1"><attr name="label"><string>del:marble</string></attr></edge>
-        <edge from="n3" to="n2"><attr name="label"><string>new:marble</string></attr></edge>
-        
-        <node id="n4"/>
-        <edge from="n4" to="n4"><attr name="label"><string>forall:</string></attr></edge>
-        <edge from="n1" to="n4"><attr name="label"><string>at</string></attr></edge>
-        <edge from="n2" to="n4"><attr name="label"><string>at</string></attr></edge>
-        <edge from="n3" to="n4"><attr name="label"><string>at</string></attr></edge>
+        <node id="n0">
+            <attr name="layout">
+                <string>10 8 33 18</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>57 112 35 18</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>116 61 35 18</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>114 196 38 18</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>184 139 11 18</string>
+            </attr>
+        </node>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Block</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Space</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n4">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>cw</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n0">
+            <attr name="label">
+                <string>belongsTo</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Space</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n4">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n0">
+            <attr name="label">
+                <string>belongsTo</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>type:Player</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n2">
+            <attr name="label">
+                <string>new:marble</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n4">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n1">
+            <attr name="label">
+                <string>del:marble</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>forall:</string>
+            </attr>
+        </edge>
     </graph>
 </gxl>

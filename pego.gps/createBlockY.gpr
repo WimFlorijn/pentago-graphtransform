@@ -1,32 +1,108 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="createBlockX">
+    <graph role="rule" edgeids="false" edgemode="directed" id="createBlockY">
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0"/>
-        <edge from="n0" to="n0"><attr name="label"><string>type:Game</string></attr></edge>
-        <edge from="n0" to="n0"><attr name="label"><string>id:g</string></attr></edge>
-        
-        <node id="n1"/>
-        <edge from="n1" to="n1"><attr name="label"><string>type:Block</string></attr></edge>
-        <edge from="n1" to="n1"><attr name="label"><string>id:b</string></attr></edge>
-        <edge from="n1" to="n1"><attr name="label"><string>test: lt(self.by, g.blocks-1)</string></attr></edge>
-        <edge from="n1" to="n3"><attr name="label"><string>bx</string></attr></edge>
-        <edge from="n1" to="n4"><attr name="label"><string>by</string></attr></edge>
-        
-        <node id="n3"/>
-        <edge from="n3" to="n3"><attr name="label"><string>int:</string></attr></edge>
-        <edge from="n3" to="n3"><attr name="label"><string>par:0</string></attr></edge>
-        
-        <node id="n4"/>
-        <edge from="n4" to="n4"><attr name="label"><string>int:</string></attr></edge>
-        <edge from="n4" to="n4"><attr name="label"><string>par:1</string></attr></edge>
-        
-        <node id="n2"/>
-        <edge from="n2" to="n2"><attr name="label"><string>type:Block</string></attr></edge>
-        <edge from="n2" to="n2"><attr name="label"><string>let: bx=int: b.bx</string></attr></edge>
-        <edge from="n2" to="n2"><attr name="label"><string>let: by=int: b.by+1</string></attr></edge>
-        <edge from="n2" to="n2"><attr name="label"><string>cnew:</string></attr></edge>
+        <node id="n0">
+            <attr name="layout">
+                <string>10 8 53 18</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>239 109 119 36</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>192 11 17 18</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>191 210 17 18</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>10 236 79 54</string>
+            </attr>
+        </node>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>id:g</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Game</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>id:b</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Block</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>test:lt(self.by, g.blocks-1)</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n4">
+            <attr name="label">
+                <string>by</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n3">
+            <attr name="label">
+                <string>bx</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>int:</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>par:0</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>int:</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>par:1</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>cnew:</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Block</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>let:bx = int: b.bx</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>let:by = int: b.by+1</string>
+            </attr>
+        </edge>
     </graph>
 </gxl>
