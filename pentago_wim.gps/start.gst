@@ -6,197 +6,197 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>68 81 36 36</string>
+                <string>80 80 35 35</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>240 82 36 36</string>
+                <string>240 80 35 35</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>407 81 36 36</string>
+                <string>400 80 35 35</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>65 227 36 36</string>
+                <string>80 240 35 35</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>243 226 36 36</string>
+                <string>240 240 35 35</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>407 227 36 36</string>
+                <string>400 240 35 35</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>65 372 36 36</string>
+                <string>80 400 35 35</string>
             </attr>
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>241 371 36 36</string>
+                <string>240 400 35 35</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>408 371 36 36</string>
+                <string>400 400 35 35</string>
             </attr>
         </node>
         <node id="n17">
             <attr name="layout">
-                <string>598 83 36 36</string>
+                <string>560 80 35 35</string>
             </attr>
         </node>
         <node id="n13">
             <attr name="layout">
-                <string>770 84 36 36</string>
+                <string>720 80 35 35</string>
             </attr>
         </node>
         <node id="n12">
             <attr name="layout">
-                <string>937 83 36 36</string>
+                <string>880 80 35 35</string>
             </attr>
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>595 229 36 36</string>
+                <string>560 240 35 35</string>
             </attr>
         </node>
         <node id="n16">
             <attr name="layout">
-                <string>773 228 36 36</string>
+                <string>720 240 35 35</string>
             </attr>
         </node>
         <node id="n14">
             <attr name="layout">
-                <string>937 229 36 36</string>
+                <string>880 240 35 35</string>
             </attr>
         </node>
         <node id="n18">
             <attr name="layout">
-                <string>595 374 36 36</string>
+                <string>560 400 35 35</string>
             </attr>
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>771 373 36 36</string>
+                <string>720 400 35 35</string>
             </attr>
         </node>
         <node id="n15">
             <attr name="layout">
-                <string>938 373 36 36</string>
+                <string>880 400 35 35</string>
             </attr>
         </node>
         <node id="n23">
             <attr name="layout">
-                <string>75 507 36 36</string>
+                <string>80 560 35 35</string>
             </attr>
         </node>
         <node id="n36">
             <attr name="layout">
-                <string>247 508 36 36</string>
+                <string>240 560 35 35</string>
             </attr>
         </node>
         <node id="n31">
             <attr name="layout">
-                <string>414 507 36 36</string>
+                <string>400 560 35 35</string>
             </attr>
         </node>
         <node id="n22">
             <attr name="layout">
-                <string>72 653 36 36</string>
+                <string>80 720 35 35</string>
             </attr>
         </node>
         <node id="n35">
             <attr name="layout">
-                <string>250 652 36 36</string>
+                <string>240 720 35 35</string>
             </attr>
         </node>
         <node id="n20">
             <attr name="layout">
-                <string>414 653 36 36</string>
+                <string>400 720 35 35</string>
             </attr>
         </node>
         <node id="n24">
             <attr name="layout">
-                <string>72 798 36 36</string>
+                <string>80 880 35 35</string>
             </attr>
         </node>
         <node id="n29">
             <attr name="layout">
-                <string>248 797 36 36</string>
+                <string>240 880 35 35</string>
             </attr>
         </node>
         <node id="n27">
             <attr name="layout">
-                <string>415 797 36 36</string>
+                <string>400 880 35 35</string>
             </attr>
         </node>
         <node id="n30">
             <attr name="layout">
-                <string>605 509 36 36</string>
+                <string>560 560 35 35</string>
             </attr>
         </node>
         <node id="n28">
             <attr name="layout">
-                <string>777 510 36 36</string>
+                <string>720 560 35 35</string>
             </attr>
         </node>
         <node id="n26">
             <attr name="layout">
-                <string>944 509 36 36</string>
+                <string>880 560 35 35</string>
             </attr>
         </node>
         <node id="n25">
             <attr name="layout">
-                <string>602 655 36 36</string>
+                <string>560 720 35 35</string>
             </attr>
         </node>
         <node id="n32">
             <attr name="layout">
-                <string>780 654 36 36</string>
+                <string>720 720 35 35</string>
             </attr>
         </node>
         <node id="n21">
             <attr name="layout">
-                <string>944 655 36 36</string>
+                <string>880 720 35 35</string>
             </attr>
         </node>
         <node id="n34">
             <attr name="layout">
-                <string>602 800 36 36</string>
+                <string>560 880 35 35</string>
             </attr>
         </node>
         <node id="n19">
             <attr name="layout">
-                <string>778 799 36 36</string>
+                <string>720 880 35 35</string>
             </attr>
         </node>
         <node id="n33">
             <attr name="layout">
-                <string>945 799 36 36</string>
+                <string>880 880 35 35</string>
             </attr>
         </node>
         <node id="n37">
             <attr name="layout">
-                <string>1131 111 35 18</string>
+                <string>1120 80 35 18</string>
             </attr>
         </node>
         <node id="n38">
             <attr name="layout">
-                <string>1045 179 73 36</string>
+                <string>1040 160 73 35</string>
             </attr>
         </node>
         <node id="n39">
             <attr name="layout">
-                <string>1187 294 94 36</string>
+                <string>1140 240 94 35</string>
             </attr>
         </node>
         <edge from="n0" to="n0">

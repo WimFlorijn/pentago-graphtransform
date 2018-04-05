@@ -11,7 +11,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>472 288 35 18</string>
+                <string>340 172 35 18</string>
             </attr>
         </node>
         <node id="n2">
@@ -31,7 +31,7 @@
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>768 286 35 18</string>
+                <string>921 167 35 18</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -39,7 +39,7 @@
                 <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n0" to="n4">
+        <edge from="n0" to="n1">
             <attr name="label">
                 <string>on</string>
             </attr>
@@ -49,7 +49,7 @@
                 <string>on</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
+        <edge from="n0" to="n4">
             <attr name="label">
                 <string>on</string>
             </attr>

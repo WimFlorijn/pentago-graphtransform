@@ -11,7 +11,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>192 164 59 36</string>
+                <string>183 164 76 36</string>
             </attr>
         </node>
         <node id="n2">
@@ -21,44 +21,12 @@
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>right</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
                 <string>type:Space</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>downright</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>downleft</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>upright</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>down</string>
+                <string>right</string>
             </attr>
             <attr name="layout">
                 <string>500 0 331 267 433 266 331 267 11</string>
@@ -82,7 +50,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>left</string>
+                <string>upright</string>
             </attr>
             <attr name="layout">
                 <string>500 0 331 267 433 266 331 267 11</string>
@@ -93,24 +61,24 @@
                 <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n1" to="n0">
-            <attr name="label">
-                <string>on</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>in=1:out=1:nextPlayer</string>
             </attr>
         </edge>
-        <edge from="n2" to="n1">
+        <edge from="n1" to="n0">
             <attr name="label">
-                <string>currentPlayer</string>
+                <string>on</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Game</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n1">
+            <attr name="label">
+                <string>currentPlayer</string>
             </attr>
         </edge>
     </graph>
