@@ -6,72 +6,62 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>135 143 38 18</string>
+                <string>517 609 38 18</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>200 239 75 18</string>
+                <string>488 203 75 18</string>
             </attr>
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>91 8 35 18</string>
+                <string>920 445 35 18</string>
             </attr>
         </node>
         <node id="n12">
             <attr name="layout">
-                <string>10 187 35 18</string>
+                <string>733 451 35 18</string>
             </attr>
         </node>
         <node id="n13">
             <attr name="layout">
-                <string>207 142 35 18</string>
+                <string>499 450 35 18</string>
             </attr>
         </node>
         <node id="n14">
             <attr name="layout">
-                <string>291 123 35 18</string>
+                <string>325 441 35 18</string>
             </attr>
         </node>
         <node id="n15">
             <attr name="layout">
-                <string>181 343 35 18</string>
+                <string>137 445 35 18</string>
             </attr>
         </node>
         <node id="n21">
             <attr name="layout">
-                <string>36 97 29 18</string>
+                <string>834 342 29 18</string>
             </attr>
         </node>
         <node id="n22">
             <attr name="layout">
-                <string>92 243 29 18</string>
+                <string>611 347 29 18</string>
             </attr>
         </node>
         <node id="n23">
             <attr name="layout">
-                <string>338 168 29 18</string>
+                <string>416 335 29 18</string>
             </attr>
         </node>
         <node id="n24">
             <attr name="layout">
-                <string>292 319 29 18</string>
+                <string>239 335 29 18</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Player</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n14">
-            <attr name="label">
-                <string>marble</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n13">
-            <attr name="label">
-                <string>marble</string>
             </attr>
         </edge>
         <edge from="n0" to="n12">
@@ -80,6 +70,16 @@
             </attr>
         </edge>
         <edge from="n0" to="n15">
+            <attr name="label">
+                <string>marble</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n14">
+            <attr name="label">
+                <string>marble</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n13">
             <attr name="label">
                 <string>marble</string>
             </attr>
@@ -164,14 +164,14 @@
                 <string>type:Next</string>
             </attr>
         </edge>
-        <edge from="n22" to="n13">
-            <attr name="label">
-                <string>out</string>
-            </attr>
-        </edge>
         <edge from="n22" to="n1">
             <attr name="label">
                 <string>dir</string>
+            </attr>
+        </edge>
+        <edge from="n22" to="n13">
+            <attr name="label">
+                <string>out</string>
             </attr>
         </edge>
         <edge from="n23" to="n23">
@@ -179,14 +179,14 @@
                 <string>type:Next</string>
             </attr>
         </edge>
-        <edge from="n23" to="n14">
-            <attr name="label">
-                <string>out</string>
-            </attr>
-        </edge>
         <edge from="n23" to="n1">
             <attr name="label">
                 <string>dir</string>
+            </attr>
+        </edge>
+        <edge from="n23" to="n14">
+            <attr name="label">
+                <string>out</string>
             </attr>
         </edge>
         <edge from="n24" to="n24">
@@ -194,14 +194,14 @@
                 <string>type:Next</string>
             </attr>
         </edge>
-        <edge from="n24" to="n15">
-            <attr name="label">
-                <string>out</string>
-            </attr>
-        </edge>
         <edge from="n24" to="n1">
             <attr name="label">
                 <string>dir</string>
+            </attr>
+        </edge>
+        <edge from="n24" to="n15">
+            <attr name="label">
+                <string>out</string>
             </attr>
         </edge>
     </graph>

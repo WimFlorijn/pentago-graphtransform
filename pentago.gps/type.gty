@@ -4,39 +4,150 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0"/>
-        <edge from="n0" to="n0"><attr name="label"><string>type:Game</string></attr></edge>
-        <edge from="n0" to="n0"><attr name="label"><string>out=1:int:blocks</string></attr></edge>
-        <edge from="n0" to="n2"><attr name="label"><string>out=1:currentPlayer</string></attr></edge>
-        
-        <node id="n1"/>
-        <edge from="n1" to="n1"><attr name="label"><string>type:Space</string></attr></edge>
-        <edge from="n1" to="n1"><attr name="label"><string>out=1:int:x</string></attr></edge>
-        <edge from="n1" to="n1"><attr name="label"><string>out=1:int:y</string></attr></edge>
-        <edge from="n1" to="n1"><attr name="label"><string>ccw</string></attr></edge>
-        <edge from="n1" to="n1"><attr name="label"><string>around</string></attr></edge>
-        <edge from="n1" to="n1"><attr name="label"><string>cw</string></attr></edge>
-        <edge from="n1" to="n5"><attr name="label"><string>out=1:belongsTo</string></attr></edge>
-        
-        <node id="n2"/>
-        <edge from="n2" to="n2"><attr name="label"><string>type:Player</string></attr></edge>
-        <edge from="n2" to="n2"><attr name="label"><string>in=1:out=1:nextPlayer</string></attr></edge>
-        <edge from="n2" to="n1"><attr name="label"><string>in=0..1:marble</string></attr></edge>
-        
-        <node id="n3"/>
-        <edge from="n3" to="n3"><attr name="label"><string>type:Direction</string></attr></edge>
-        <edge from="n3" to="n3"><attr name="label"><string>out=1:int:dx</string></attr></edge>
-        <edge from="n3" to="n3"><attr name="label"><string>out=1:int:dy</string></attr></edge>
-        
-        <node id="n4"/>
-        <edge from="n4" to="n4"><attr name="label"><string>type:Next</string></attr></edge>
-        <edge from="n1" to="n4"><attr name="label"><string>in=1:in</string></attr></edge>
-        <edge from="n4" to="n1"><attr name="label"><string>out=1:out</string></attr></edge>
-        <edge from="n4" to="n3"><attr name="label"><string>out=1:dir</string></attr></edge>
-        
-        <node id="n5"/>
-        <edge from="n5" to="n5"><attr name="label"><string>type:Block</string></attr></edge>
-        <edge from="n5" to="n5"><attr name="label"><string>out=1:int:bx</string></attr></edge>
-        <edge from="n5" to="n5"><attr name="label"><string>out=1:int:by</string></attr></edge>
+        <node id="n0">
+            <attr name="layout">
+                <string>150 108 61 36</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>385 249 59 108</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>367 110 76 36</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>100 449 57 54</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>90 217 29 18</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>668 231 38 54</string>
+            </attr>
+        </node>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Game</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>out=1:int:blocks</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>out=1:currentPlayer</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Space</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>around</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>ccw</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>cw</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>out=1:int:x</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>out=1:int:y</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n4">
+            <attr name="label">
+                <string>in=1:in</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n5">
+            <attr name="label">
+                <string>out=1:belongsTo</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Player</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>in=1:out=1:nextPlayer</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n1">
+            <attr name="label">
+                <string>in=0..1:marble</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>type:Direction</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>out=1:int:dx</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>out=1:int:dy</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>type:Next</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n3">
+            <attr name="label">
+                <string>out=1:dir</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n1">
+            <attr name="label">
+                <string>out=1:out</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>type:Block</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>out=1:int:bx</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>out=1:int:by</string>
+            </attr>
+        </edge>
     </graph>
 </gxl>
