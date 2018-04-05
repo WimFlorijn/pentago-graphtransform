@@ -11,52 +11,52 @@
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>223 212 51 18</string>
+                <string>620 448 51 18</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>170 118 59 54</string>
+                <string>192 43 59 54</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>105 318 83 54</string>
+                <string>15 516 83 54</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>228 70 83 54</string>
+                <string>444 37 83 54</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>175 361 83 54</string>
+                <string>234 741 83 54</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>375 285 83 54</string>
+                <string>896 630 83 54</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>116 248 83 54</string>
+                <string>32 188 83 54</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>315 145 83 54</string>
+                <string>714 173 83 54</string>
             </attr>
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>190 301 83 54</string>
+                <string>298 401 83 54</string>
             </attr>
         </node>
         <node id="n9">
             <attr name="layout">
-                <string>311 83 83 54</string>
+                <string>620 39 83 54</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -99,14 +99,14 @@
                 <string>let:y = 3*b.by</string>
             </attr>
         </edge>
-        <edge from="n1" to="n6">
-            <attr name="label">
-                <string>new:cw</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n3">
             <attr name="label">
                 <string>new:ccw</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n7">
+            <attr name="label">
+                <string>new:cw</string>
             </attr>
         </edge>
         <edge from="n1" to="n10">
@@ -134,14 +134,14 @@
                 <string>let:y = 3*b.by</string>
             </attr>
         </edge>
-        <edge from="n2" to="n10">
-            <attr name="label">
-                <string>new:belongsTo</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n6">
             <attr name="label">
                 <string>new:ccw</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n10">
+            <attr name="label">
+                <string>new:belongsTo</string>
             </attr>
         </edge>
         <edge from="n2" to="n4">
@@ -169,11 +169,6 @@
                 <string>let:y = 3*b.by</string>
             </attr>
         </edge>
-        <edge from="n3" to="n10">
-            <attr name="label">
-                <string>new:belongsTo</string>
-            </attr>
-        </edge>
         <edge from="n3" to="n9">
             <attr name="label">
                 <string>new:ccw</string>
@@ -182,6 +177,11 @@
         <edge from="n3" to="n1">
             <attr name="label">
                 <string>new:cw</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n10">
+            <attr name="label">
+                <string>new:belongsTo</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -204,9 +204,9 @@
                 <string>let:y = 3*b.by+1</string>
             </attr>
         </edge>
-        <edge from="n4" to="n2">
+        <edge from="n4" to="n10">
             <attr name="label">
-                <string>new:ccw</string>
+                <string>new:belongsTo</string>
             </attr>
         </edge>
         <edge from="n4" to="n8">
@@ -214,9 +214,9 @@
                 <string>new:cw</string>
             </attr>
         </edge>
-        <edge from="n4" to="n10">
+        <edge from="n4" to="n2">
             <attr name="label">
-                <string>new:belongsTo</string>
+                <string>new:ccw</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">
@@ -299,11 +299,6 @@
                 <string>let:y = 3*b.by+2</string>
             </attr>
         </edge>
-        <edge from="n7" to="n10">
-            <attr name="label">
-                <string>new:belongsTo</string>
-            </attr>
-        </edge>
         <edge from="n7" to="n1">
             <attr name="label">
                 <string>new:ccw</string>
@@ -312,6 +307,11 @@
         <edge from="n7" to="n9">
             <attr name="label">
                 <string>new:cw</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n10">
+            <attr name="label">
+                <string>new:belongsTo</string>
             </attr>
         </edge>
         <edge from="n8" to="n8">
@@ -334,14 +334,14 @@
                 <string>let:y = 3*b.by+2</string>
             </attr>
         </edge>
-        <edge from="n8" to="n10">
-            <attr name="label">
-                <string>new:belongsTo</string>
-            </attr>
-        </edge>
         <edge from="n8" to="n6">
             <attr name="label">
                 <string>new:cw</string>
+            </attr>
+        </edge>
+        <edge from="n8" to="n10">
+            <attr name="label">
+                <string>new:belongsTo</string>
             </attr>
         </edge>
         <edge from="n8" to="n4">
@@ -374,14 +374,14 @@
                 <string>new:ccw</string>
             </attr>
         </edge>
-        <edge from="n9" to="n3">
-            <attr name="label">
-                <string>new:cw</string>
-            </attr>
-        </edge>
         <edge from="n9" to="n10">
             <attr name="label">
                 <string>new:belongsTo</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n3">
+            <attr name="label">
+                <string>new:cw</string>
             </attr>
         </edge>
     </graph>

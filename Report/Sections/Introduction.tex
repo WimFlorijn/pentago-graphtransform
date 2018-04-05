@@ -1,3 +1,14 @@
 \section{Introduction}
 \label{Introduction}
-Currently we are taking part in the Software Science course. In this course, a graph transformation tool called GROOVE is discussed. The course involves understanding the logic behind the graph transformation technique, and learning to work with the tool itself. At the moment we have plenty of experience with modelling problems in GROOVE, and will discuss a more elaborate problem as subject of the course project. We have chosen to model a board game called Pentago. In this report we discuss the game, possible extensions and our approach to the modelling. We will also discuss the design choices we have made.
+Graphs can be used to model various problems.
+Behaviour or changes to the modelled system can be expressed using graph transformations.
+Changes to this model are a series of graph transformations called rules.
+These rules are a tree part system, a left side, a right side and a matching graph.
+When the two transformations are executed, from left to right, parts of the graph will be removed and new parts will be added.
+This way of modelling graph transformations are called push-outs, more about the underlying theorie can be found in %todo recerence.
+This report will discuss the modelling of a game called pentago using such graph transformations. 
+The modeling is done using a tool called GROOVE.
+
+\vspace{6pt}
+
+Chapter \ref{Pentago} will discuss the game, it's rules and other noteworthy information concerning the playing of the game. After discussing the game we will present our model of the game, mayor rules and noteworthy design choices(Chapter \ref{Design}).

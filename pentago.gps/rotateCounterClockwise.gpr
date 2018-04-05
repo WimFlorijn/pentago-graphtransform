@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="rotateClockwise">
+    <graph role="rule" edgeids="false" edgemode="directed" id="rotateCounterClockwise">
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>73 150 33 18</string>
+                <string>10 8 33 18</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>240 358 35 18</string>
+                <string>57 112 35 18</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>309 122 35 18</string>
+                <string>116 61 35 18</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>484 144 38 18</string>
+                <string>114 196 38 18</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>194 203 11 18</string>
+                <string>184 139 11 18</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -39,14 +39,14 @@
                 <string>type:Space</string>
             </attr>
         </edge>
-        <edge from="n1" to="n2">
-            <attr name="label">
-                <string>cw</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n4">
             <attr name="label">
                 <string>at</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>ccw</string>
             </attr>
         </edge>
         <edge from="n1" to="n0">
@@ -74,14 +74,14 @@
                 <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n3" to="n4">
-            <attr name="label">
-                <string>at</string>
-            </attr>
-        </edge>
         <edge from="n3" to="n2">
             <attr name="label">
                 <string>new:marble</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n4">
+            <attr name="label">
+                <string>at</string>
             </attr>
         </edge>
         <edge from="n3" to="n1">
