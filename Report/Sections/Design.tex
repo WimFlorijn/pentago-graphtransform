@@ -1,12 +1,73 @@
-\section{Design}
+\section{Model design}
 \label{Design}
-Some fancy introduction words about our design here.
-Suggestion:
-\subsection{Board Design}
-Tell something about how we modelled the baord and how rotations work
-\subsection{Taking turns}
-How do we take turns?
-\subsection{Checking for victory}
-How do we check for victory
-\subsection{Design choices \& considerations not discussed so far}
-Other fancy stuff goes here
+The game was modeled using different designs. This section will discuss the designs and their up- and down-sides.
+
+In each design the following properties were used:
+
+\begin{itemize}
+\item The type "Game" is used to model the the game itself.
+\item A type "Player" is used to model a player of the game.
+\item A type "Space" is used to model a space on the board where a marble can be placed.
+\item An edge "currentPlayer", from the Game to a Player, models whose turn it is.
+\item "nextPlayer" Edges between Player nodes indicate the order in which the Players have to play.
+\item A "marble" edge from a Player to a Space indicates that a Player has placed a marble on that Space.
+\end{itemize}
+
+Also the following rule names were used:
+
+\begin{itemize}
+\item "placeMarble": A rule in which the currentPlayer can place a marble on the board.
+\item "rotateClockwise" and "rotateCounterClockwise": The rules that model the rotation of a Block on the board.
+\end{itemize}
+
+\subsection{PentagoXY}
+
+The first design modeled the layout of the board by using $x$ and $y$ coordinates for the Spaces where a marble can be placed. 
+The board is dynamically generated. The attribute "blocks" determines the size of the board. It indicates the number of blocks in the $x$ and the $y$ direction, with each block being $3*3$ Spaces.
+In the start graph there is only one Space node with the coordinates $(0,0)$. Rules were created to create new Spaces in the $x$ and $y$ direction.
+
+A Block on the $x,y$ grid could be identified by the middle Space in the block. Where $x\mod3==1$ and $y\mod3==1$.
+Rotating the block was done by changing the coordinate attributes of the Spaces surrounding the middle Space.
+
+To model the situation where a Player has won, the Direction type was introduced. The Direction node has a $dx$ and a $dy$ attribute.
+This way the direction horizontal ($dx=1,dy=0$), vertical ($dx=0,dy=1$) and both diagonal ($dx=1,dy=1$ and $dx=1,dy=-1$) were modeled. 
+In the "winner" rule 5 Spaces have to have a marble of the same Player and be spaced repectively $0,1,2,3,4$ times $dx$ and $dy$ for a specific direction.
+
+This model relies more on attributes than on a graph structure.
+The matching strategy of Groove proved to be very inefficient to find a matching for a block. The 9 Space nodes have to be identified by the attributes of the middle space in the block, and the positions relative to these coordinates.
+Possible optimizations could be to add flags to the middle space of a Block, and use them to steer the matching strategy of Groove. E.g. to add a flag to the middle Space of the blocks, such that Groove would first try to find these Spaces, instead of trying to find matches for all possible combinations of Spaces.
+However it is also possible to add more structure to the graph. 
+The extra structure in the model could even convey the intention of the model better to the user, and it might also have better performance in the Groove tool. Therefore a new model of the game was created.
+
+\section{Pego and Pentago}
+
+For the second iteration in the development of the model two production systems were created. The "pego" system to generate the board on which to play, and "pentago" to model the actual rules of the game.
+
+In "pego" a new type named Block is added. This models a $3*3$ block and makes it easier for Groove to match rules to rotate blocks.
+The starting graph again consist of a Game node, nodes for the Players and one Block node. From the Game node the first Player is pointed to by the "currentPlayer" edge, and the players are connected by "nextPlayer" edges that model the order in which they can play.
+The Game node again has the attribute "blocks", which defines how many blocks the game board has in the $x$ and $y$ direction.
+
+With the rules "createBlockX" and createBlockY" new Block nodes are created in the respective direction.
+With the rule "createBlock" the 9 Spaces of the actual block are created. Again each Space gets an $x$ and $y$ coordinate appointed to it, calculated using the coordinates of the block and the offsets of the spaces within the block.
+Within the block are edges that define how "marble" edges need to move when a block is rotated clockwise (cw) or counter-clockwise (ccw).
+
+Having 5 marbles in a row is a property that always extends beyond one block.
+Therefore the rule "setDirections" is used to dynamically create the structure to model in which directions 5-in-a-row can occur within a block and cross into adjacent blocks.
+Again there are 4 Direction nodes in the start graph to represent the directions horizontal ($dx=1,dy=0$), vertical ($dx=0,dy=1$), and both diagonals ($dx=1,dy=1$ and $dx=1,dy=-1$). 
+The connection between two spaces is modeled by a Next node that has one "in" edge from the first Space to the Next node, one "out" edge from the Next to the second Space node and a "dir" edge from the Next to the Direction node. This allows to abstract away from the direction in the actual rule to match 5-in-a-row.
+
+In the pentago production system are the rules for the actual game.
+It again has the rule "placeMarble" in which the current player can place a marble on the board.
+
+Rotating a block is now done by matching a Block node, and moving all marble edges, from all Players from Spaces that belong to that block, to Spaces that are connected with the direction edge (cw or ccw).
+
+Matching 5-in-a-row is done in the "winner" rule by a rule that matches a Player who has marbles on 5 Spaces that are connected by "in" and "out" edges via Next nodes that are connected to the same Direction node.
+
+In simulation the performance has significantly improved. Rotating blocks is nearly instantaneous. 
+However trying to find a match for the "winner" rule takes significant time. 
+Finding 5 Spaces out of 36, 4 Next nodes out of 110, 1 Block out of 4 and 1 Player out of 2 with the right connections takes a lot of time if the strategy is not perfect.
+
+There is more structure in the pentago model than in the pentagoXY model. Dynamically creating the board gives greater flexibility in extending to a multi-player game.
+The addition of the Block node nicely captures the notion of the $3*3$ blocks of the game. And as a bonus it also made it a lot better to analyze with Groove.
+Using the Next type to abstract away from the directions made it possible to nicely capture the notion of 5-in-a-row for the "winner" rule. However the added complexity in the model also proved to be a bottleneck in analyzing the system.
+
