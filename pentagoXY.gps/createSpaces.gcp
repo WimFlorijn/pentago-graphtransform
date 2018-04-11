@@ -1,0 +1,9 @@
+recipe createSpaces() {
+int x,y;
+createSpaceX(out x, out y);
+#createSpaceX;
+alap{
+createSpaceY(0,y);
+#createSpaceX(out x, out y);
+}
+}
