@@ -1134,6 +1134,11 @@
                 <string>let:name = "P1"</string>
             </attr>
         </edge>
+        <edge from="n38" to="n38">
+            <attr name="label">
+                <string>flag:strategy2</string>
+            </attr>
+        </edge>
         <edge from="n38" to="n39">
             <attr name="label">
                 <string>nextPlayer</string>
