@@ -1,6 +1,7 @@
 \section{Model design}
 \label{Design}
 The game was modeled using different designs. This section will discuss the designs and their up- and down-sides.
+The characteristics of GROOVE should be taken into account to optimize the simulation performance.
 
 In each design the following properties were used:
 
@@ -19,6 +20,8 @@ Also the following rule names were used:
 \item "placeMarble": A rule in which the currentPlayer can place a marble on the board.
 \item "rotateClockwise" and "rotateCounterClockwise": The rules that model the rotation of a Block on the board.
 \end{itemize}
+
+Also a control program is defined which defines the game flow.
 
 \subsection{PentagoXY}
 
@@ -39,7 +42,7 @@ Possible optimizations could be to add flags to the middle space of a Block, and
 However it is also possible to add more structure to the graph. 
 The extra structure in the model could even convey the intention of the model better to the user, and it might also have better performance in the Groove tool. Therefore a new model of the game was created.
 
-\section{Pego and Pentago}
+\subsection{Pego and Pentago}
 
 For the second iteration in the development of the model two production systems were created. The "pego" system to generate the board on which to play, and "pentago" to model the actual rules of the game.
 
@@ -71,3 +74,72 @@ There is more structure in the pentago model than in the pentagoXY model. Dynami
 The addition of the Block node nicely captures the notion of the $3*3$ blocks of the game. And as a bonus it also made it a lot better to analyze with Groove.
 Using the Next type to abstract away from the directions made it possible to nicely capture the notion of 5-in-a-row for the "winner" rule. However the added complexity in the model also proved to be a bottleneck in analyzing the system.
 
+\subsection{Pure Graph Pentago}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.25,clip]{Images/board1.png}
+    \caption{Design 1 board}
+    \label{fig:board1}
+\end{figure}
+
+The default pentago board contains 36 spaces, and two players.
+This design features 36 spaces which are connected by horizontal, vertical and diagonal edges.
+All spaces in a sub-board hold an unique identifier flag.
+A game node and two players exist, where the game node maintains an edge to the player whoms turn it is.
+The board model is displayed in figure \ref{fig:board1}.
+A marble placement of a player on a space is defined as a edge from the player node to the space node.
+
+When a player has placed a marble, he has to rotate a sub-board.
+This rotation can be seen as a graph transformation.
+In this graph transformation the marbles on the sub-board are relocated to a position clockwise or counter-clockwise.
+
+\subsubsection{Design 1}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.5,clip]{Images/rotate1.png}
+    \caption{Design 1 rotations}
+    \label{fig:rotate1}
+\end{figure}
+
+Because the nodes are fixed in this board, we have chosen to only move the marbles instead of the whole sub-board.
+This improves the complexity of this transformation but also that of the end-game detection, because board changes do not have to be taken into account.
+Two transformations have been defined: one for the clockwise rotation and one for the counter-clockwise rotation.
+Both transformations rotate all marbles on a sub-board 3 spaces in the respective direction.
+The graph transformations defined for the rotations are displayed in figure \ref{fig:rotate1}.
+
+In pentago, turns are taken between players. 
+After a player has placed a marble, and rotated a sub-board, the other player gets a turn.
+\subsubsection{Design 1}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.5,clip]{Images/turn1.png}
+    \caption{Design 1 taking turns}
+    \label{fig:turn1}
+\end{figure}
+
+The turn taking mechanism has been defined as a graph transformation.
+In the start graph the participating players are defined with each player holding a nextPlayer edge to the player whoms turn it is after he is finished.
+When a player has finished its turn, the currentPlayer edge from the game node is shifted to the player which is connected to by the nextPlayer edge.
+The graph transformation defined for the turn taking is displayed in figure \ref{fig:turn1}.
+
+The game has ended when one player holds a row of 5 horizontal/vertical/diagonal consecutive nodes.
+When no marbles can be placed on the board anymore the game results in a draw.
+
+\subsubsection{Design 1}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.5,clip]{Images/endgame1.png}
+    \caption{Design 1 victory checking}
+    \label{fig:endgame1}
+\end{figure}
+
+The check for a winner condition has been modelled as a graph condition.
+One player holds edges to five nodes which must be connected by either horizontal, vertical or diagonal edges.
+The graph condition for a horizontal row is defined in figure \ref{fig:endgame1}.
+The graph conditions which check for vertical or diagonal rows are identical, but they check for different node names.
+A game is a draw when no placeMarble rules can be executed anymore.
+
+To enforce that the game is played by the rules, a control program has been defined which holds the game flow.
+As long as possible, a player places a marble, rotates a sub-board and gives the turn to the next player.
+The game is finished when a win condition is met, or no marbles can be placed anymore.
