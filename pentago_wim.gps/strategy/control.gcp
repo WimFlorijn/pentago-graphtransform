@@ -1,0 +1,21 @@
+package strategy;
+
+function pm() {
+try {
+add2fourLeft|add2fourRight;
+}else{
+try{
+add2threeRight|add2threeLeft;
+}else{
+try{
+add2twoLeft|add2twoRight;
+}else{
+try{
+add2oneLeft|add2oneRight;
+}else{
+midBlock;
+}
+}
+}
+}
+}

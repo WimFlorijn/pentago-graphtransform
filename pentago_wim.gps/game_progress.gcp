@@ -1,5 +1,9 @@
 alap {
+  try{
+  strategy.pm();
+  } else {
   placeMarble;
+  }
   rotateClockwise | rotateCounterClockwise;
   nextPlayer;
 }
