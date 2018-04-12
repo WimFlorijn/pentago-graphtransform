@@ -1,105 +1,135 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="placeMarble">
+    <graph role="rule" edgeids="false" edgemode="directed" id="AIOneDown">
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0">
-            <attr name="layout">
-                <string>176 83 46 24</string>
-            </attr>
-        </node>
         <node id="n1">
             <attr name="layout">
-                <string>313 167 49 24</string>
+                <string>325 175 102 48</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>400 268 57 48</string>
+                <string>357 65 46 24</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>128 172 47 48</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>495 171 49 24</string>
+                <string>128 318 47 48</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>33 86 45 48</string>
+                <string>368 331 49 24</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>30 237 45 24</string>
+                <string>522 54 45 48</string>
             </attr>
         </node>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>type:Game</string>
+        <node id="n6">
+            <attr name="layout">
+                <string>530 198 45 24</string>
             </attr>
-        </edge>
-        <edge from="n0" to="n1">
-            <attr name="label">
-                <string>currentPlayer</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n4">
-            <attr name="label">
-                <string>del:currentPhase</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n5">
-            <attr name="label">
-                <string>new:currentPhase</string>
-            </attr>
-        </edge>
+        </node>
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n1" to="n2">
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>flag:AI</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n0">
+            <attr name="label">
+                <string>on</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n3">
             <attr name="label">
                 <string>new:on</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
+                <string>type:Game</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n1">
+            <attr name="label">
+                <string>currentPlayer</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n5">
+            <attr name="label">
+                <string>del:currentPhase</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n6">
+            <attr name="label">
+                <string>new:currentPhase</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Space</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:place5</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
                 <string>type:Space</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
             <attr name="label">
-                <string>not:</string>
+                <string>flag:place8</string>
             </attr>
         </edge>
-        <edge from="n3" to="n3">
+        <edge from="n3" to="n0">
+            <attr name="label">
+                <string>up</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
             <attr name="label">
                 <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n3" to="n2">
+        <edge from="n4" to="n3">
             <attr name="label">
                 <string>not:on</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
+        <edge from="n5" to="n5">
             <attr name="label">
                 <string>type:Phase</string>
             </attr>
         </edge>
-        <edge from="n4" to="n4">
+        <edge from="n5" to="n5">
             <attr name="label">
                 <string>flag:place</string>
             </attr>
         </edge>
-        <edge from="n4" to="n5">
+        <edge from="n5" to="n6">
             <attr name="label">
                 <string>nextPhase</string>
             </attr>
         </edge>
-        <edge from="n5" to="n5">
+        <edge from="n6" to="n6">
             <attr name="label">
                 <string>type:Phase</string>
             </attr>

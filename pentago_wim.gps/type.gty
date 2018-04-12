@@ -6,27 +6,24 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>313 258 35 18</string>
+                <string>307 255 47 24</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>192 164 59 36</string>
+                <string>182 146 79 72</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>205 51 35 18</string>
+                <string>199 48 46 24</string>
             </attr>
         </node>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>right</string>
-            </attr>
+        <node id="n3">
             <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
+                <string>45 158 78 48</string>
             </attr>
-        </edge>
+        </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Space</string>
@@ -34,26 +31,7 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>downright</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>downleft</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>upright</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
+                <string>color</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -61,23 +39,23 @@
                 <string>down</string>
             </attr>
             <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
+                <string>500 -18 359 266 433 266 359 266 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>up</string>
+                <string>downleft</string>
             </attr>
             <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
+                <string>500 -18 359 266 433 266 359 266 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>upleft</string>
+                <string>downright</string>
             </attr>
             <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
+                <string>500 -18 359 266 433 266 359 266 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -85,7 +63,39 @@
                 <string>left</string>
             </attr>
             <attr name="layout">
-                <string>500 0 331 267 433 266 331 267 11</string>
+                <string>500 -18 359 266 433 266 359 266 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>right</string>
+            </attr>
+            <attr name="layout">
+                <string>500 -18 359 266 433 266 359 266 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>up</string>
+            </attr>
+            <attr name="layout">
+                <string>500 -18 359 266 433 266 359 266 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>upleft</string>
+            </attr>
+            <attr name="layout">
+                <string>500 -18 359 266 433 266 359 266 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>upright</string>
+            </attr>
+            <attr name="layout">
+                <string>500 -18 359 266 433 266 359 266 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -93,9 +103,9 @@
                 <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n1" to="n0">
+        <edge from="n1" to="n1">
             <attr name="label">
-                <string>on</string>
+                <string>color</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -103,14 +113,34 @@
                 <string>in=1:out=1:nextPlayer</string>
             </attr>
         </edge>
-        <edge from="n2" to="n1">
+        <edge from="n1" to="n0">
             <attr name="label">
-                <string>currentPlayer</string>
+                <string>on</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Game</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n1">
+            <attr name="label">
+                <string>currentPlayer</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>currentPhase</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>type:Phase</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>in=1:out=1:nextPhase</string>
             </attr>
         </edge>
     </graph>

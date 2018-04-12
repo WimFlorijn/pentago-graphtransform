@@ -6,12 +6,17 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>70 96 38 18</string>
+                <string>39 57 99 96</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>271 159 36 180</string>
+                <string>265 129 47 240</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>561 151 65 96</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -22,6 +27,16 @@
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Player</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:AI</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:random</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -77,6 +92,21 @@
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>flag:place9</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Phase</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>flag:place</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>flag:rotate</string>
             </attr>
         </edge>
     </graph>
