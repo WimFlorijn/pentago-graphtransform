@@ -41,27 +41,27 @@
         </edge>
         <edge from="n0" to="n1">
             <attr name="label">
-                <string>on</string>
+                <string>marble</string>
             </attr>
         </edge>
         <edge from="n0" to="n3">
             <attr name="label">
-                <string>on</string>
+                <string>marble</string>
             </attr>
         </edge>
         <edge from="n0" to="n4">
             <attr name="label">
-                <string>on</string>
+                <string>marble</string>
             </attr>
         </edge>
         <edge from="n0" to="n2">
             <attr name="label">
-                <string>on</string>
+                <string>marble</string>
             </attr>
         </edge>
         <edge from="n0" to="n5">
             <attr name="label">
-                <string>on</string>
+                <string>marble</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
