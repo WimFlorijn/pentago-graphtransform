@@ -257,12 +257,12 @@
         </edge>
         <edge from="n3" to="n2">
             <attr name="label">
-                <string>new:on</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n3" to="n0">
             <attr name="label">
-                <string>del:on</string>
+                <string>del:marble</string>
             </attr>
         </edge>
         <edge from="n3" to="n9">
@@ -282,12 +282,12 @@
         </edge>
         <edge from="n11" to="n1">
             <attr name="label">
-                <string>del:on</string>
+                <string>del:marble</string>
             </attr>
         </edge>
         <edge from="n11" to="n4">
             <attr name="label">
-                <string>new:on</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n14" to="n14">
@@ -297,7 +297,7 @@
         </edge>
         <edge from="n14" to="n2">
             <attr name="label">
-                <string>del:on</string>
+                <string>del:marble</string>
             </attr>
         </edge>
         <edge from="n14" to="n13">
@@ -307,7 +307,7 @@
         </edge>
         <edge from="n14" to="n7">
             <attr name="label">
-                <string>new:on</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n16" to="n16">
@@ -322,12 +322,12 @@
         </edge>
         <edge from="n16" to="n4">
             <attr name="label">
-                <string>del:on</string>
+                <string>del:marble</string>
             </attr>
         </edge>
         <edge from="n16" to="n6">
             <attr name="label">
-                <string>new:on</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n18" to="n18">
@@ -337,12 +337,12 @@
         </edge>
         <edge from="n18" to="n7">
             <attr name="label">
-                <string>del:on</string>
+                <string>del:marble</string>
             </attr>
         </edge>
         <edge from="n18" to="n8">
             <attr name="label">
-                <string>new:on</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n18" to="n17">
@@ -362,12 +362,12 @@
         </edge>
         <edge from="n19" to="n6">
             <attr name="label">
-                <string>del:on</string>
+                <string>del:marble</string>
             </attr>
         </edge>
         <edge from="n19" to="n5">
             <attr name="label">
-                <string>new:on</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n22" to="n22">
@@ -377,12 +377,12 @@
         </edge>
         <edge from="n22" to="n8">
             <attr name="label">
-                <string>del:on</string>
+                <string>del:marble</string>
             </attr>
         </edge>
         <edge from="n22" to="n0">
             <attr name="label">
-                <string>new:on</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n22" to="n21">
@@ -402,12 +402,12 @@
         </edge>
         <edge from="n23" to="n1">
             <attr name="label">
-                <string>new:on</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n23" to="n5">
             <attr name="label">
-                <string>del:on</string>
+                <string>del:marble</string>
             </attr>
         </edge>
         <edge from="n24" to="n24">

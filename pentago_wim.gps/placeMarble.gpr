@@ -41,7 +41,7 @@
         </edge>
         <edge from="n1" to="n2">
             <attr name="label">
-                <string>new:on</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -61,7 +61,7 @@
         </edge>
         <edge from="n3" to="n2">
             <attr name="label">
-                <string>not:on</string>
+                <string>not:marble</string>
             </attr>
         </edge>
     </graph>

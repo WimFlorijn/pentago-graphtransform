@@ -68,7 +68,7 @@
         </edge>
         <edge from="n1" to="n0">
             <attr name="label">
-                <string>on</string>
+                <string>marble</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
