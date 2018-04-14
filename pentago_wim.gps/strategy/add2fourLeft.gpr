@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="add2fourLeft">
+    <graph role="rule" edgeids="false" edgemode="directed" id="strategy.add2fourLeft">
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n10"/>
+        <node id="n10">
+            <attr name="layout">
+                <string>209 273 35 18</string>
+            </attr>
+        </node>
         <node id="n0">
             <attr name="layout">
-                <string>623 286 38 18</string>
+                <string>616 277 51 36</string>
             </attr>
         </node>
         <node id="n1">
@@ -47,15 +51,20 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
+                <string>type:Player</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
                 <string>flag:strategy2</string>
             </attr>
         </edge>
-        <edge from="n0" to="n5">
+        <edge from="n0" to="n3">
             <attr name="label">
                 <string>marble</string>
             </attr>
         </edge>
-        <edge from="n0" to="n3">
+        <edge from="n0" to="n5">
             <attr name="label">
                 <string>marble</string>
             </attr>
@@ -68,11 +77,6 @@
         <edge from="n0" to="n2">
             <attr name="label">
                 <string>marble</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>type:Player</string>
             </attr>
         </edge>
         <edge from="n0" to="n1">
@@ -90,14 +94,14 @@
                 <string>?x</string>
             </attr>
         </edge>
-        <edge from="n2" to="n3">
-            <attr name="label">
-                <string>?x[right,up,upleft,upright]</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Space</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>?x[right,up,upleft,upright]</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -110,14 +114,14 @@
                 <string>?x</string>
             </attr>
         </edge>
-        <edge from="n4" to="n5">
-            <attr name="label">
-                <string>?x</string>
-            </attr>
-        </edge>
         <edge from="n4" to="n4">
             <attr name="label">
                 <string>type:Space</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>?x</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">

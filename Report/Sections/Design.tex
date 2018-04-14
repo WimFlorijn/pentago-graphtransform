@@ -1,14 +1,13 @@
 \section{Model design}
 \label{Design}
 The game was modeled using different designs. This section will discuss the designs and their up- and down-sides.
-The characteristics of GROOVE should be taken into account to optimize the simulation performance.
-
+The characteristics of GROOVE should be taken into account to optimize the simulation performance. 
 In each design the following properties were used:
 
 \begin{itemize}
 \item The type "Game" is used to model the the game itself.
-\item A type "Player" is used to model a player of the game.
-\item A type "Space" is used to model a space on the board where a marble can be placed.
+\item A type "Player" is used to model a player of the game. The game node features an "currentPlayer" edge to the player whoms turn it is.
+\item A type "Space" is used to model a space on the board where a marble can be placed. A marble placement of a player on a space is defined as an "marble" edge from the player node to the space node.
 \item An edge "currentPlayer", from the Game to a Player, models whose turn it is.
 \item "nextPlayer" Edges between Player nodes indicate the order in which the Players have to play.
 \item A "marble" edge from a Player to a Space indicates that a Player has placed a marble on that Space.
@@ -19,11 +18,24 @@ Also the following rule names were used:
 \begin{itemize}
 \item "placeMarble": A rule in which the currentPlayer can place a marble on the board.
 \item "rotateClockwise" and "rotateCounterClockwise": The rules that model the rotation of a Block on the board.
+\item "nextPlayer": The rule that provides the turn-taking mechanism of the palers. The turn taking mechanism has been defined as a graph transformation.
+When a player has finished its turn, the currentPlayer edge from the game node is shifted to the player which is connected to by the nextPlayer edge.
+The global graph transformation defined for the turn taking mechanism is displayed in figure \ref{fig:turn}.
 \end{itemize}
 
-Also a control program is defined which defines the game flow.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.5,clip]{Images/turn.png}
+    \caption{Taking turns}
+    \label{fig:turn}
+\end{figure}
+
+To enforce that the game is played by the rules, a control program has been defined which contains the game flow.
+The control program defines the following game flow: As long as possible, a player places a marble, rotates a sub-board and gives the turn to the next player.
+The game is finished when a win condition is met, or no marbles can be placed anymore.
 
 \subsection{PentagoXY}
+\label{pentagoxy}
 
 The first design modeled the layout of the board by using $x$ and $y$ coordinates for the Spaces where a marble can be placed. 
 The board is dynamically generated. The attribute "blocks" determines the size of the board. It indicates the number of blocks in the $x$ and the $y$ direction, with each block being $3*3$ Spaces.
@@ -32,9 +44,13 @@ In the start graph there is only one Space node with the coordinates $(0,0)$. Ru
 A Block on the $x,y$ grid could be identified by the middle Space in the block. Where $x\mod3==1$ and $y\mod3==1$.
 Rotating the block was done by changing the coordinate attributes of the Spaces surrounding the middle Space.
 
+\vspace{6pt}
+
 To model the situation where a Player has won, the Direction type was introduced. The Direction node has a $dx$ and a $dy$ attribute.
 This way the direction horizontal ($dx=1,dy=0$), vertical ($dx=0,dy=1$) and both diagonal ($dx=1,dy=1$ and $dx=1,dy=-1$) were modeled. 
 In the "winner" rule 5 Spaces have to have a marble of the same Player and be spaced repectively $0,1,2,3,4$ times $dx$ and $dy$ for a specific direction.
+
+\vspace{6pt}
 
 This model relies more on attributes than on a graph structure.
 The matching strategy of Groove proved to be very inefficient to find a matching for a block. The 9 Space nodes have to be identified by the attributes of the middle space in the block, and the positions relative to these coordinates.
@@ -43,32 +59,66 @@ However it is also possible to add more structure to the graph.
 The extra structure in the model could even convey the intention of the model better to the user, and it might also have better performance in the Groove tool. Therefore a new model of the game was created.
 
 \subsection{Pego and Pentago}
+\label{pego_and_pentago}
 
 For the second iteration in the development of the model two production systems were created. The "pego" system to generate the board on which to play, and "pentago" to model the actual rules of the game.
+
+\vspace{6pt}
 
 In "pego" a new type named Block is added. This models a $3*3$ block and makes it easier for Groove to match rules to rotate blocks.
 The starting graph again consist of a Game node, nodes for the Players and one Block node. From the Game node the first Player is pointed to by the "currentPlayer" edge, and the players are connected by "nextPlayer" edges that model the order in which they can play.
 The Game node again has the attribute "blocks", which defines how many blocks the game board has in the $x$ and $y$ direction.
 
+\vspace{6pt}
+
 With the rules "createBlockX" and createBlockY" new Block nodes are created in the respective direction.
 With the rule "createBlock" the 9 Spaces of the actual block are created. Again each Space gets an $x$ and $y$ coordinate appointed to it, calculated using the coordinates of the block and the offsets of the spaces within the block.
 Within the block are edges that define how "marble" edges need to move when a block is rotated clockwise (cw) or counter-clockwise (ccw).
+An entire block including its spaces is visualized in figure  \ref{fig:p2-block}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.25,clip]{Images/oneblockwithoutbelongs.PNG}
+    \caption{A block (sub-board)}
+    \label{fig:p2-block}
+\end{figure}
+
+\vspace{6pt}
 
 Having 5 marbles in a row is a property that always extends beyond one block.
 Therefore the rule "setDirections" is used to dynamically create the structure to model in which directions 5-in-a-row can occur within a block and cross into adjacent blocks.
 Again there are 4 Direction nodes in the start graph to represent the directions horizontal ($dx=1,dy=0$), vertical ($dx=0,dy=1$), and both diagonals ($dx=1,dy=1$ and $dx=1,dy=-1$). 
-The connection between two spaces is modeled by a Next node that has one "in" edge from the first Space to the Next node, one "out" edge from the Next to the second Space node and a "dir" edge from the Next to the Direction node. This allows to abstract away from the direction in the actual rule to match 5-in-a-row.
+The connection between two spaces is modeled by a Next node that has one "in" edge from the first Space to the Next node, one "out" edge from the Next to the second Space node and a "dir" edge from the Next to the Direction node. This allows to abstract away from the direction in the actual rule to match 5-in-a-row. The connection between two spaces by making use of a direction node is visualized in figure \ref{fig:cspaces}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.25,clip]{Images/TwoSpacesConnected.PNG}
+    \caption{Connected spaces}
+    \label{fig:cspaces}
+\end{figure}
+
+\vspace{6pt}
 
 In the pentago production system are the rules for the actual game.
 It again has the rule "placeMarble" in which the current player can place a marble on the board.
 
-Rotating a block is now done by matching a Block node, and moving all marble edges, from all Players from Spaces that belong to that block, to Spaces that are connected with the direction edge (cw or ccw).
+Rotating a block is now done by matching a Block node, and moving all marble edges, from all Players from Spaces that belong to that block, to Spaces that are connected with the direction edge (cw or ccw). The rotation mechanism is visualized in figure \ref{fig:rsb}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.25,clip]{Images/blockforrotation.PNG}
+    \caption{Rotating a sub-board}
+    \label{fig:rsb}
+\end{figure}
+\vspace{6pt}
 
 Matching 5-in-a-row is done in the "winner" rule by a rule that matches a Player who has marbles on 5 Spaces that are connected by "in" and "out" edges via Next nodes that are connected to the same Direction node.
 
 In simulation the performance has significantly improved. Rotating blocks is nearly instantaneous. 
 However trying to find a match for the "winner" rule takes significant time. 
 Finding 5 Spaces out of 36, 4 Next nodes out of 110, 1 Block out of 4 and 1 Player out of 2 with the right connections takes a lot of time if the strategy is not perfect.
+
+\vspace{6pt}
 
 There is more structure in the pentago model than in the pentagoXY model. Dynamically creating the board gives greater flexibility in extending to a multi-player game.
 The addition of the Block node nicely captures the notion of the $3*3$ blocks of the game. And as a bonus it also made it a lot better to analyze with Groove.
@@ -79,67 +129,46 @@ Using the Next type to abstract away from the directions made it possible to nic
 \begin{figure}[!h]
     \centering
     \includegraphics[scale=0.25,clip]{Images/board1.png}
-    \caption{Design 1 board}
+    \caption{Board layout}
     \label{fig:board1}
 \end{figure}
 
-The default pentago board contains 36 spaces, and two players.
-This design features 36 spaces which are connected by horizontal, vertical and diagonal edges.
+This design features 36 spaces in which nodes are connected to their neighbours by horizontal, vertical and diagonal edges.
 All spaces in a sub-board hold an unique identifier flag.
-A game node and two players exist, where the game node maintains an edge to the player whoms turn it is.
 The board model is displayed in figure \ref{fig:board1}.
-A marble placement of a player on a space is defined as a edge from the player node to the space node.
 
-When a player has placed a marble, he has to rotate a sub-board.
-This rotation can be seen as a graph transformation.
-In this graph transformation the marbles on the sub-board are relocated to a position clockwise or counter-clockwise.
+\vspace{6pt}
 
-\subsubsection{Design 1}
+The rotation step in the game flow can be seen as a graph transformation.
+In the corresponding graph transformation the "marble" edges to the nodes on the sub-board are relocated to a clockwise or counter-clockwise node.
+This way the board including its connecting edges stay intact.
+The graph transformations defined for the rotations are displayed in figure \ref{fig:rotate1}.
+
 \begin{figure}[!h]
     \centering
     \includegraphics[scale=0.5,clip]{Images/rotate1.png}
-    \caption{Design 1 rotations}
+    \caption{Rotating a sub-board}
     \label{fig:rotate1}
 \end{figure}
 
-Because the nodes are fixed in this board, we have chosen to only move the marbles instead of the whole sub-board.
-This improves the complexity of this transformation but also that of the end-game detection, because board changes do not have to be taken into account.
-Two transformations have been defined: one for the clockwise rotation and one for the counter-clockwise rotation.
-Both transformations rotate all marbles on a sub-board 3 spaces in the respective direction.
-The graph transformations defined for the rotations are displayed in figure \ref{fig:rotate1}.
+\vspace{6pt}
 
-In pentago, turns are taken between players. 
-After a player has placed a marble, and rotated a sub-board, the other player gets a turn.
-\subsubsection{Design 1}
-\begin{figure}[!h]
-    \centering
-    \includegraphics[scale=0.5,clip]{Images/turn1.png}
-    \caption{Design 1 taking turns}
-    \label{fig:turn1}
-\end{figure}
+The check for a winning condition has been modelled as a graph condition.
+For a player to win, the player needs to hold "marble" edges to five consecutive nodes.
+Thus there are 4 graph conditions needed for checking for row of nodes which are connected by either horizontal, vertical or diagonal edges.
+The seperation of the winning conditions should be seen as a trade-off between scalability and performance: while having 4 individual winning conditions decreases the expandability of the game rules, we have chosen to implement it this way because it decreases the complexity of the computations needed when looking for a winner significantly.
+The graph condition for a horizontal row is visualized in figure \ref{fig:endgame1}.
+The graph conditions which check for vertical or diagonal rows are identical, except that they check for different node names.
 
-The turn taking mechanism has been defined as a graph transformation.
-In the start graph the participating players are defined with each player holding a nextPlayer edge to the player whoms turn it is after he is finished.
-When a player has finished its turn, the currentPlayer edge from the game node is shifted to the player which is connected to by the nextPlayer edge.
-The graph transformation defined for the turn taking is displayed in figure \ref{fig:turn1}.
-
-The game has ended when one player holds a row of 5 horizontal/vertical/diagonal consecutive nodes.
-When no marbles can be placed on the board anymore the game results in a draw.
-
-\subsubsection{Design 1}
 \begin{figure}[!h]
     \centering
     \includegraphics[scale=0.5,clip]{Images/endgame1.png}
-    \caption{Design 1 victory checking}
+    \caption{Checking for a winner}
     \label{fig:endgame1}
 \end{figure}
 
-The check for a winner condition has been modelled as a graph condition.
-One player holds edges to five nodes which must be connected by either horizontal, vertical or diagonal edges.
-The graph condition for a horizontal row is defined in figure \ref{fig:endgame1}.
-The graph conditions which check for vertical or diagonal rows are identical, but they check for different node names.
-A game is a draw when no placeMarble rules can be executed anymore.
+\vspace{6pt}
 
-To enforce that the game is played by the rules, a control program has been defined which holds the game flow.
-As long as possible, a player places a marble, rotates a sub-board and gives the turn to the next player.
-The game is finished when a win condition is met, or no marbles can be placed anymore.
+While this model is less abstract and thus less scalable than the pentago models described in sections \ref{pego_and_pentago} and \ref{pentagoxy}, the fact that it is a pure graph representation makes the model design more clear for users.
+Furthermore the usage of edges and node identifiers enable quick matching, which results in a better performance when exploring the state space.
+For these reasons this model has been chosen to research smart player strategies.
