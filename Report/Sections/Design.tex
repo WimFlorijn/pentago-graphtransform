@@ -158,7 +158,7 @@ For a player to win, the player needs to hold "marble" edges to five consecutive
 Thus there are 4 graph conditions needed for checking for row of nodes which are connected by either horizontal, vertical or diagonal edges.
 The seperation of the winning conditions should be seen as a trade-off between scalability and performance: while having 4 individual winning conditions decreases the expandability of the game rules, we have chosen to implement it this way because it decreases the complexity of the computations needed when looking for a winner significantly.
 The graph condition for a horizontal row is visualized in figure \ref{fig:endgame1}.
-The graph conditions which check for vertical or diagonal rows are identical, except that they check for different node names.
+The graph conditions which check for vertical or diagonal rows are identical, except that they check for different edge names.
 
 \begin{figure}[!h]
     \centering
