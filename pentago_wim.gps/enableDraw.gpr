@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="type" edgeids="false" edgemode="directed" id="type">
+    <graph role="rule" edgeids="false" edgemode="directed" id="enableDraw">
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>-30 -18 61 36</string>
+                <string>320 194 35 18</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>258 39 35 54</string>
+                <string>317 308 38 18</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>52 188 76 36</string>
+                <string>463 193 38 18</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>177 196 57 54</string>
+                <string>312 97 52 18</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -29,29 +29,24 @@
                 <string>type:Game</string>
             </attr>
         </edge>
-        <edge from="n0" to="n0">
+        <edge from="n0" to="n3">
             <attr name="label">
-                <string>out=1:int:blocks</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n2">
-            <attr name="label">
-                <string>out=1:currentPlayer</string>
+                <string>new:draw</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>type:Space</string>
+                <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n1" to="n1">
+        <edge from="n1" to="n0">
             <attr name="label">
-                <string>out=1:int:x</string>
+                <string>finished</string>
             </attr>
         </edge>
-        <edge from="n1" to="n1">
+        <edge from="n1" to="n2">
             <attr name="label">
-                <string>out=1:int:y</string>
+                <string>not:=</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -59,29 +54,19 @@
                 <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n2" to="n2">
+        <edge from="n2" to="n0">
             <attr name="label">
-                <string>in=1:out=1:nextPlayer</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n1">
-            <attr name="label">
-                <string>in=0..1:marble</string>
+                <string>finished</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
             <attr name="label">
-                <string>type:Direction</string>
+                <string>new:</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
             <attr name="label">
-                <string>out=1:int:dx</string>
-            </attr>
-        </edge>
-        <edge from="n3" to="n3">
-            <attr name="label">
-                <string>out=1:int:dy</string>
+                <string>type:Finished</string>
             </attr>
         </edge>
     </graph>

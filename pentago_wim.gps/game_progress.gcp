@@ -1,9 +1,49 @@
 alap {
-  try{
-  strategy.pm();
-  } else {
-  placeMarble;
-  }
-  rotateClockwise | rotateCounterClockwise;
+  executePlace();
+  executeRotate();
   nextPlayer;
+}
+
+function executePlace () {
+	try{
+		strategy.pm();
+	} else {
+		try{
+	  		placeMarble;
+	  	} else {
+	  		executeRotate();
+			setDraw;
+	  	}
+	}
+	try {
+		checkwinners;
+	}
+}
+
+function executeRotate () {
+	rotateClockwise | rotateCounterClockwise;
+	try {
+		checkwinners;
+	}
+}
+
+function checkwinners () {
+	try {
+		winner_horizontal;
+	}
+	try {
+		winner_vertical;
+	}
+	try {
+		winner_rdiagonal;
+	}
+	try {
+		winner_ldiagonal;
+	}
+	try {
+		enableDraw;
+	}
+	try {
+		enableWinner;
+	}
 }

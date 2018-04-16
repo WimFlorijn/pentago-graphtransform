@@ -11,12 +11,17 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>183 164 76 36</string>
+                <string>183 146 76 72</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
                 <string>205 51 35 18</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>376 39 52 36</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -63,7 +68,17 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
+                <string>flag:strategy2</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
                 <string>in=1:out=1:nextPlayer</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>out=1:string:name</string>
             </attr>
         </edge>
         <edge from="n1" to="n0">
@@ -71,9 +86,12 @@
                 <string>marble</string>
             </attr>
         </edge>
-        <edge from="n1" to="n1">
+        <edge from="n1" to="n2">
             <attr name="label">
-                <string>flag:strategy2</string>
+                <string>finished</string>
+            </attr>
+            <attr name="layout">
+                <string>670 -28 217 143 218 72 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -84,6 +102,29 @@
         <edge from="n2" to="n1">
             <attr name="label">
                 <string>currentPlayer</string>
+            </attr>
+            <attr name="layout">
+                <string>467 -44 226 72 225 143 11</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>draw</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>winner</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>type:Finished</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>out=1:string:name</string>
             </attr>
         </edge>
     </graph>

@@ -34,12 +34,22 @@
                 <string>921 167 35 18</string>
             </attr>
         </node>
+        <node id="n7">
+            <attr name="layout">
+                <string>624 430 35 18</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>798 282 11 18</string>
+            </attr>
+        </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
+        <edge from="n0" to="n2">
             <attr name="label">
                 <string>marble</string>
             </attr>
@@ -49,19 +59,29 @@
                 <string>marble</string>
             </attr>
         </edge>
+        <edge from="n0" to="n5">
+            <attr name="label">
+                <string>marble</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>marble</string>
+            </attr>
+        </edge>
         <edge from="n0" to="n4">
             <attr name="label">
                 <string>marble</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
+        <edge from="n0" to="n7">
             <attr name="label">
-                <string>marble</string>
+                <string>new:finished</string>
             </attr>
         </edge>
-        <edge from="n0" to="n5">
+        <edge from="n0" to="n6">
             <attr name="label">
-                <string>marble</string>
+                <string>at</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -107,6 +127,16 @@
         <edge from="n5" to="n5">
             <attr name="label">
                 <string>type:Space</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>type:Game</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>exists:</string>
             </attr>
         </edge>
     </graph>
