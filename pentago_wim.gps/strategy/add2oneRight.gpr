@@ -6,27 +6,27 @@
         </attr>
         <node id="n10">
             <attr name="layout">
-                <string>468 489 46 24</string>
+                <string>473 492 35 18</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>436 326 110 48</string>
+                <string>465 332 51 36</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>193 168 47 24</string>
+                <string>199 171 35 18</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>463 170 47 24</string>
+                <string>469 173 35 18</string>
             </attr>
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>705 165 49 24</string>
+                <string>710 168 38 18</string>
             </attr>
         </node>
         <edge from="n10" to="n10">
@@ -46,17 +46,17 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>test:name=="p1"</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n2">
-            <attr name="label">
-                <string>cnew:marble</string>
+                <string>flag:strategy2</string>
             </attr>
         </edge>
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>marble</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

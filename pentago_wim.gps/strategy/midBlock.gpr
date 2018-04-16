@@ -6,22 +6,22 @@
         </attr>
         <node id="n10">
             <attr name="layout">
-                <string>618 123 46 24</string>
+                <string>623 126 35 18</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>617 283 49 24</string>
+                <string>616 277 51 36</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>421 263 47 48</string>
+                <string>426 269 36 36</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>419 133 49 24</string>
+                <string>424 136 38 18</string>
             </attr>
         </node>
         <edge from="n10" to="n10">
@@ -39,9 +39,14 @@
                 <string>type:Player</string>
             </attr>
         </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:strategy2</string>
+            </attr>
+        </edge>
         <edge from="n0" to="n1">
             <attr name="label">
-                <string>cnew:marble</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

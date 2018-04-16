@@ -6,37 +6,37 @@
         </attr>
         <node id="n10">
             <attr name="layout">
-                <string>623 536 46 24</string>
+                <string>628 539 35 18</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>605 328 68 48</string>
+                <string>613 334 51 36</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>334 169 47 24</string>
+                <string>340 172 35 18</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>463 170 47 24</string>
+                <string>469 173 35 18</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>611 168 47 24</string>
+                <string>617 171 35 18</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>759 167 47 24</string>
+                <string>765 170 35 18</string>
             </attr>
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>338 328 49 24</string>
+                <string>343 331 38 18</string>
             </attr>
         </node>
         <edge from="n10" to="n10">
@@ -76,7 +76,7 @@
         </edge>
         <edge from="n0" to="n1">
             <attr name="label">
-                <string>cnew:marble</string>
+                <string>new:marble</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

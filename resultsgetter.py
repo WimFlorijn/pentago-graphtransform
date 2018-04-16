@@ -8,7 +8,7 @@ gps_location = "C://Users//Wim//Documents//Universiteit//Year5Module3//SoftwareS
 output_file = "C://Users//Wim//Documents//Universiteit//Year5Module3//SoftwareScience//GraphTransformProject//output.txt"
 result_file = "C://Users//Wim//Documents//Universiteit//Year5Module3//SoftwareScience//GraphTransformProject//result.csv"
 
-execution_amount = 50
+execution_amount = 200
 p = True
 
 def write_result(result):
@@ -36,11 +36,11 @@ def explore():
                 single_result['Transitions'] = splitted_cmd_output[index + 1].decode("utf-8")
 
         root = xml.etree.ElementTree.parse(output_file).getroot()
-        game_result = root.findall(".//*[@from='n36'][@to='n45']")[0][0][0].text
+        game_result = root.findall(".//*[@from='n36'][@to='n43']")[0][0][0].text
 
         if game_result == 'winner':
             single_result['Result'] = 'Winner'
-            winner = root.findall(".//*[@from='n45'][@to='n45']")[1][0][0].text
+            winner = root.findall(".//*[@from='n43'][@to='n43']")[1][0][0].text
             name = re.search(r'let:name = string:"(\S+)"', winner).group(1)
             single_result['Winner'] = name
         else:
