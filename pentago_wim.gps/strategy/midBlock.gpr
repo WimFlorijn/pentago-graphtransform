@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="midBlock">
+    <graph role="rule" edgeids="false" edgemode="directed" id="strategy.midBlock">
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n10"/>
+        <node id="n10">
+            <attr name="layout">
+                <string>618 123 46 24</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>617 283 49 24</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>421 263 47 48</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>419 133 49 24</string>
+            </attr>
+        </node>
         <edge from="n10" to="n10">
             <attr name="label">
                 <string>type:Game</string>
@@ -15,24 +34,9 @@
                 <string>currentPlayer</string>
             </attr>
         </edge>
-        <node id="n0">
-            <attr name="layout">
-                <string>623 286 38 18</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>340 172 35 18</string>
-            </attr>
-        </node>
         <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Player</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>flag:strategy2</string>
             </attr>
         </edge>
         <edge from="n0" to="n1">
@@ -50,5 +54,15 @@
                 <string>flag:place5</string>
             </attr>
         </edge>
-            </graph>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Player</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n1">
+            <attr name="label">
+                <string>not:marble</string>
+            </attr>
+        </edge>
+    </graph>
 </gxl>

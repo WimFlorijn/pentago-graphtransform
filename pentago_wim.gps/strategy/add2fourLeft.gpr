@@ -6,37 +6,42 @@
         </attr>
         <node id="n10">
             <attr name="layout">
-                <string>209 273 35 18</string>
+                <string>625 411 46 24</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>616 277 51 36</string>
+                <string>607 271 68 48</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>340 172 35 18</string>
+                <string>334 169 47 24</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>469 173 35 18</string>
+                <string>463 170 47 24</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>617 171 35 18</string>
+                <string>611 168 47 24</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>765 170 35 18</string>
+                <string>759 167 47 24</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>921 167 35 18</string>
+                <string>915 164 47 24</string>
+            </attr>
+        </node>
+        <node id="n11">
+            <attr name="layout">
+                <string>337 406 49 24</string>
             </attr>
         </node>
         <edge from="n10" to="n10">
@@ -59,17 +64,7 @@
                 <string>flag:strategy2</string>
             </attr>
         </edge>
-        <edge from="n0" to="n3">
-            <attr name="label">
-                <string>marble</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n5">
-            <attr name="label">
-                <string>marble</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n4">
             <attr name="label">
                 <string>marble</string>
             </attr>
@@ -82,6 +77,16 @@
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>cnew:marble</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n3">
+            <attr name="label">
+                <string>marble</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n4">
+            <attr name="label">
+                <string>marble</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -129,15 +134,14 @@
                 <string>type:Space</string>
             </attr>
         </edge>
-        <node id="n11"/>
         <edge from="n11" to="n11">
             <attr name="label">
-                <string>type:Player</string>
+                <string>not:</string>
             </attr>
         </edge>
         <edge from="n11" to="n11">
             <attr name="label">
-                <string>not:</string>
+                <string>type:Player</string>
             </attr>
         </edge>
         <edge from="n11" to="n1">
