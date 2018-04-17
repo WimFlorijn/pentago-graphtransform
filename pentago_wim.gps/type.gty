@@ -6,22 +6,22 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>272 348 47 24</string>
+                <string>368 172 35 18</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>170 134 101 96</string>
+                <string>182 137 76 90</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>199 48 46 24</string>
+                <string>204 51 35 18</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>352 33 99 48</string>
+                <string>364 39 75 36</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -34,7 +34,7 @@
                 <string>right</string>
             </attr>
             <attr name="layout">
-                <string>500 -1 324 356 441 356 324 356 11</string>
+                <string>500 0 385 181 509 200 509 200 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -42,7 +42,7 @@
                 <string>up</string>
             </attr>
             <attr name="layout">
-                <string>500 -1 324 356 441 356 324 356 11</string>
+                <string>500 0 385 181 509 200 509 200 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -50,7 +50,7 @@
                 <string>upleft</string>
             </attr>
             <attr name="layout">
-                <string>500 -1 324 356 441 356 324 356 11</string>
+                <string>500 0 385 181 509 200 509 200 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -58,7 +58,7 @@
                 <string>upright</string>
             </attr>
             <attr name="layout">
-                <string>500 -1 324 356 441 356 324 356 11</string>
+                <string>500 0 385 181 509 200 509 200 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -86,6 +86,11 @@
                 <string>out=1:string:name</string>
             </attr>
         </edge>
+        <edge from="n1" to="n0">
+            <attr name="label">
+                <string>marble</string>
+            </attr>
+        </edge>
         <edge from="n1" to="n2">
             <attr name="label">
                 <string>finished</string>
@@ -94,14 +99,17 @@
                 <string>670 -28 221 182 222 60 11</string>
             </attr>
         </edge>
-        <edge from="n1" to="n0">
-            <attr name="label">
-                <string>marble</string>
-            </attr>
-        </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Game</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n1">
+            <attr name="label">
+                <string>currentPlayer</string>
+            </attr>
+            <attr name="layout">
+                <string>467 -44 222 60 221 182 11</string>
             </attr>
         </edge>
         <edge from="n2" to="n3">
@@ -112,14 +120,6 @@
         <edge from="n2" to="n3">
             <attr name="label">
                 <string>winner</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n1">
-            <attr name="label">
-                <string>currentPlayer</string>
-            </attr>
-            <attr name="layout">
-                <string>467 -44 222 60 221 182 11</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">

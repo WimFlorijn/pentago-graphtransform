@@ -36,12 +36,12 @@
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>624 430 35 18</string>
+                <string>624 397 35 18</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>798 282 11 18</string>
+                <string>802 288 8 18</string>
             </attr>
         </node>
         <edge from="n0" to="n0">
@@ -49,14 +49,9 @@
                 <string>type:Player</string>
             </attr>
         </edge>
-        <edge from="n0" to="n2">
+        <edge from="n0" to="n6">
             <attr name="label">
-                <string>marble</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n3">
-            <attr name="label">
-                <string>marble</string>
+                <string>at</string>
             </attr>
         </edge>
         <edge from="n0" to="n5">
@@ -74,14 +69,19 @@
                 <string>marble</string>
             </attr>
         </edge>
+        <edge from="n0" to="n3">
+            <attr name="label">
+                <string>marble</string>
+            </attr>
+        </edge>
         <edge from="n0" to="n7">
             <attr name="label">
                 <string>new:finished</string>
             </attr>
         </edge>
-        <edge from="n0" to="n6">
+        <edge from="n0" to="n2">
             <attr name="label">
-                <string>at</string>
+                <string>marble</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

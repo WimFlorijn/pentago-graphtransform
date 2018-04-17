@@ -128,7 +128,7 @@ Using the Next type to abstract away from the directions made it possible to nic
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.25,clip]{Images/board1.png}
+    \includegraphics[scale=0.35,clip]{Images/board1.png}
     \caption{Board layout}
     \label{fig:board1}
 \end{figure}
@@ -139,8 +139,19 @@ The board model is displayed in figure \ref{fig:board1}.
 
 \vspace{6pt}
 
+In this model, the \textit{Game} holds multiple \textit{Players}, which are able to hold multiple \textit{marble} edges to \textit{Spaces}. When the game ends, an edge is created from the \textit{Game} node to a newly created \textit{Finished} node. The full type graph of this model is defined in figure \ref{fig:type_graph_pure_graph}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.5,clip]{Images/typegraph_puregraphmodel.png}
+    \caption{Type graph}
+    \label{fig:type_graph_pure_graph}
+\end{figure}
+
+\vspace{6pt}
+
 The rotation step in the game flow can be seen as a graph transformation.
-In the corresponding graph transformation the "marble" edges to the nodes on the sub-board are relocated to a clockwise or counter-clockwise node.
+In the corresponding graph transformation, the \textit{marble} edges to the nodes on the sub-board are relocated to a clockwise or counter-clockwise node.
 This way the board including its connecting edges stay intact.
 The graph transformations defined for the rotations are displayed in figure \ref{fig:rotate1}.
 
@@ -153,16 +164,27 @@ The graph transformations defined for the rotations are displayed in figure \ref
 
 \vspace{6pt}
 
-The check for a winning condition has been modelled as a graph condition.
-For a player to win, the player needs to hold "marble" edges to five consecutive nodes.
-Thus there are 4 graph conditions needed for checking for row of nodes which are connected by either horizontal, vertical or diagonal edges.
+The end-game of pentago is either one player winning the game, or the game ending in a draw.
+For a player to win, the player needs to hold \textit{marble} edges to five consecutive nodes.
+The game results in a draw when multiple players hold five consecutive nodes simultaniously (this is possible after a rotation), or when no marbles can be placed on the board anymore.
+
+\vspace{6pt}
+
+To check for the winner condition, 4 graph conditions are needed which look whether a row of identical marbles (which are connected by either horizontal, vertical or diagonal edges) exist.
+The winner rule which checks for a horizontal row is visualized in figure \ref{fig:endgame1}.
+The rules which check for vertical or diagonal rows are identical, except that they check for different edge names.
+When a winner rule matches, the \textit{Player(s)} on which the condition matches are connected with a \textit{finished} edge to the \textit{Game}.
+The first draw scenario, when multiple players hold a row of consecutive marbles, is achieved when multiple \textit{Players} hold \textit{finished} edges to the \textit{Game} simultaneously.
+The draw scenario when no marble can be put on the board anymore, has been defined by using the control program.
+When either a winner or a draw is detected, a \textit{winner} or \textit{draw} edge is created between the Game and the Finished node. When a winner is detected, its name is added as an attribute to the \textit{Finished} node. The winner and draw graph condition check for the existence of a \textit{winner} or \textit{draw} edge between \textit{Game} and \textit{Finished}. When it exists the game is finished.
+
+\vspace{6pt}
+
 The seperation of the winning conditions should be seen as a trade-off between scalability and performance: while having 4 individual winning conditions decreases the expandability of the game rules, we have chosen to implement it this way because it decreases the complexity of the computations needed when looking for a winner significantly.
-The graph condition for a horizontal row is visualized in figure \ref{fig:endgame1}.
-The graph conditions which check for vertical or diagonal rows are identical, except that they check for different edge names.
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5,clip]{Images/endgame1.png}
+    \includegraphics[scale=0.5,clip]{Images/endgame_puregraph.png}
     \caption{Checking for a winner}
     \label{fig:endgame1}
 \end{figure}
