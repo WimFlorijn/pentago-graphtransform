@@ -58,14 +58,14 @@ Possible optimizations could be to add flags to the middle space of a Block, and
 However it is also possible to add more structure to the graph. 
 The extra structure in the model could even convey the intention of the model better to the user, and it might also have better performance in the Groove tool. Therefore a new model of the game was created.
 
-\subsection{Pego and Pentago}
-\label{pego_and_pentago}
+\subsection{PentagoGenerator and Pentago}
+\label{pentagoGenerator_and_pentago}
 
-For the second iteration in the development of the model two production systems were created. The "pego" system to generate the board on which to play, and "pentago" to model the actual rules of the game.
+For the second iteration in the development of the model two production systems were created. The "pentagoGenerator" system to generate the board on which to play, and "pentago" to model the actual rules of the game.
 
 \vspace{6pt}
 
-In "pego" a new type named Block is added. This models a $3*3$ block and makes it easier for Groove to match rules to rotate blocks.
+In "pentagoGenerator" a new type named Block is added. This models a $3*3$ block and makes it easier for Groove to match rules to rotate blocks.
 The starting graph again consist of a Game node, nodes for the Players and one Block node. From the Game node the first Player is pointed to by the "currentPlayer" edge, and the players are connected by "nextPlayer" edges that model the order in which they can play.
 The Game node again has the attribute "blocks", which defines how many blocks the game board has in the $x$ and $y$ direction.
 
@@ -191,6 +191,6 @@ The seperation of the winning conditions should be seen as a trade-off between s
 
 \vspace{6pt}
 
-While this model is less abstract and thus less scalable than the pentago models described in sections \ref{pego_and_pentago} and \ref{pentagoxy}, the fact that it is a more graph oriented representation makes the model design more clear for users.
+While this model is less abstract and thus less scalable than the pentago models described in sections \ref{pentagoGenerator_and_pentago} and \ref{pentagoxy}, the fact that it is a more graph oriented representation makes the model design more clear for users.
 Furthermore the usage of edges and node identifiers enable quick matching, which results in a better performance when exploring the state space.
 For these reasons this model has been chosen to research smart player strategies.
