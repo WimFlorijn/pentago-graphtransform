@@ -1,0 +1,56 @@
+\section{reflection}
+\label{Reflection}
+
+\subsection{Henk Mulder}
+
+In this reflection I want to discuss a couple of things.
+First of all my general ideas about the concept of graph transformations as a modeling technique.
+Then I want to make a brief, shallow comparison to progress algebra, and compare my experiences using both techniques.
+And finally I want to reflect a bit on the project.
+
+\subsubsection{General}
+Graphs can very conveniently model complex structures. That makes graph transformations a logical way of modeling dynamic evolution of such a structure.
+Since graphs are so common in modeling and describing systems - think of Control flow diagrams, communication systems, state charts and all sort of UML diagrams - graphs can convey properties of a system very well, even among different disciplines.
+In my opinion graph transformations therefore is a well suited modeling formalism in general.
+
+For me personal thinking about systems in the form of graph structures does give me good insight in the system. However the visual aspect that is mostly used to present graphs make it difficult for me to read them.
+Getting an overview of a state graph is very difficult. But a nice compact graph that represents a transformation rule makes the transformation even for me, as a blind person, very understandable.
+Making use of this technique in the way I used it during the project; that is by manually editing xml files, is not very productive. 
+If there would be a way to edit the graphs in an other way - I'm thinking for instance about using the aldebaran format as input, Or an editor like the ones that are generated in the EMF framework if you generate a (default) editor for an ecore model - then it would be much easier for me to use Groove in practice.
+
+\subsubsection{Graph transformations vs. process algebra}
+
+In graph transformation systems states are modeled as graphs. Transformations are then modeled as rule applications that change the structure of the underlying graph. These rules can be defined without knowing everything about the structure of the underlying graph.
+This makes it a very flexible modeling formalism. 
+
+In process algebra transformations are modeled using (compositions of) processes. Interaction between processes is modeled by message passing. Algebraic laws are defined for the process operators, to allow for manipulation by equational reasoning.
+In this I see an analogy between a process in process algebra and a transformation rule in graph transformation systems. Both specify how the underlying system changes. 
+
+In process algebra process equivalence is determined by checking for bisimulation. In graph transformation systems this is done by checking for graph isomorphisms in the transformation graph.
+Projected on to Groove recipes can then be used to do what hiding is in process algebra. Then checking for graph isomorphism is like checking for weak bisimulation in process algebra.
+
+In the course MACS1 and in the course Verification engineering I have worked with MCRL2.
+My feeling is that MCRL2 was faster in checking temporal properties of a system.
+But the kind of systems I modeled during that course were very different to the system we modeled for the project. 
+And I consider the small toy-examples not as good benchmarks to compare performance in model checking between the two tools.
+So I can not make a hard statement about that.
+I think it would be interesting to see how they compare performance wise for checking temporal properties on similar models.
+
+I wonder if Groove could improve more on the matching strategy it chooses to match rules. 
+I am thinking along the lines of finding dependencies among nodes in rules, and as a strategy then start with nodes to which the most dependencies are.
+
+\subsubsection{The project}
+
+I found it very useful to have a project in which we could do a little more with Groove than just toy-examples. 
+In the somewhat larger project we encountered more real-life problems like the trade-off between abstraction and complexity in analysis.
+The choice to model pentago was nice in the sense that it was clear to us what to model. The rules of the game are not that difficult to understand.
+But we had to compromise between abstraction in our model and the time it took to match the rules. This made it more difficult to create elegant strategies for players.
+This immediately showed where the strong and the weak points are in this technique.
+
+It was a shame that we could not really use the verification features of Groove, since we were not able to generate the entire state space for the game.
+Verification is perhaps not the main focus of the course. However it is one of the reasons to actually model a system.
+If we had chosen a different project then perhaps we could have done more with verification. (Not that a Monte Carlo simulation is not interesting.)
+
+All in all I think 4-5 weeks is really short for such a broad topic. The project takes up a lot of this time. 
+Together with the project I think we touched most of the important things on graph transformations. The basics during the lectures, and real-life experience by using it in the project.
+It is also clear to me that there is a lot more to it than we have seen so far.
