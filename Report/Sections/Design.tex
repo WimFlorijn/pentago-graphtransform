@@ -126,22 +126,22 @@ Using the Next type to abstract away from the directions made it possible to nic
 
 \subsection{PenagoFinal}
 
-\begin{figure}[!h]
-    \centering
-    \includegraphics[scale=0.35,clip]{Images/board1.png}
-    \caption{Board layout}
-    \label{fig:board1}
-\end{figure}
-
 This design features 36 spaces in which nodes are connected to their neighbours by horizontal, vertical and diagonal edges.
 All spaces in a sub-board hold an unique identifier flag.
 The board model is displayed in figure \ref{fig:board1}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3,clip]{Images/board1.png}
+    \caption{Board layout}
+    \label{fig:board1}
+\end{figure}
 
 \vspace{6pt}
 
 In this model, the \textit{Game} holds multiple \textit{Players}, which are able to hold multiple \textit{marble} edges to \textit{Spaces}. When the game ends, an edge is created from the \textit{Game} node to a newly created \textit{Finished} node. The full type graph of this model is defined in figure \ref{fig:type_graph_pure_graph}.
 
-\begin{figure}[!h]
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.5,clip]{Images/typegraph_puregraphmodel.png}
     \caption{Type graph}
@@ -155,9 +155,9 @@ In the corresponding graph transformation, the \textit{marble} edges to the node
 This way the board including its connecting edges stay intact.
 The graph transformations defined for the rotations are displayed in figure \ref{fig:rotate1}.
 
-\begin{figure}[!h]
+\begin{figure}[h]
     \centering
-    \includegraphics[scale=0.5,clip]{Images/rotate1.png}
+    \includegraphics[scale=0.45,clip]{Images/rotate1.png}
     \caption{Rotating a sub-board}
     \label{fig:rotate1}
 \end{figure}
@@ -178,16 +178,16 @@ The first draw scenario, when multiple players hold a row of consecutive marbles
 The draw scenario when no marble can be put on the board anymore, has been defined by using the control program.
 When either a winner or a draw is detected, a \textit{winner} or \textit{draw} edge is created between the Game and the Finished node. When a winner is detected, its name is added as an attribute to the \textit{Finished} node. The winner and draw graph condition check for the existence of a \textit{winner} or \textit{draw} edge between \textit{Game} and \textit{Finished}. When it exists the game is finished.
 
-\vspace{6pt}
-
-The seperation of the winning conditions should be seen as a trade-off between scalability and performance: while having 4 individual winning conditions decreases the expandability of the game rules, we have chosen to implement it this way because it decreases the complexity of the computations needed when looking for a winner significantly.
-
-\begin{figure}[!h]
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.5,clip]{Images/endgame_puregraph.png}
     \caption{Checking for a winner}
     \label{fig:endgame1}
 \end{figure}
+
+\vspace{6pt}
+
+The seperation of the winning conditions should be seen as a trade-off between scalability and performance: while having 4 individual winning conditions decreases the expandability of the game rules, we have chosen to implement it this way because it decreases the complexity of the computations needed when looking for a winner significantly.
 
 \vspace{6pt}
 

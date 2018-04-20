@@ -54,3 +54,41 @@ If we had chosen a different project then perhaps we could have done more with v
 All in all I think 4-5 weeks is really short for such a broad topic. The project takes up a lot of this time. 
 Together with the project I think we touched most of the important things on graph transformations. The basics during the lectures, and real-life experience by using it in the project.
 It is also clear to me that there is a lot more to it than we have seen so far.
+
+\subsection{Wim Florijn}
+
+In my reflection, i want to look back on my experience of the course as a whole, including the project.
+I want to mention the positive points of the course, and give some recommendations to improve it further.
+I also want to discuss the troubles that I had and how I overcame them.
+
+\subsubsection{The Course}
+During the course i have refreshed my knowledge on graphs, and learned to model with GROOVE.
+I find it interesting how graphs, which are often used for describing a system only, are used in GROOVE to program and execute a system as a whole.
+In my opinion, GROOVE provides an intuitive way to model problems, and stepwise search for their solution.
+I have compared GROOVE in the past with different AI planners, but not realy modeled problems, which proved to be more intuitive than I expected.
+The type graph offered support in defining a clear model of the system.
+
+\vspace{6pt}
+
+I liked how during the lectures examples where shown in GROOVE. This way no problems arise because the node/edge syntax is unclear.
+The downside of this part of the Software Science course, is that in my opinion it provided too much information to understand and test yourself. Especially the last two lectures introduced some new concepts which seemed interesting, but for whom we had not enough time to investigate and test in practice.
+Concretely i would have liked to investigate the model-checking abilities of GROOVE, and try to put the rule priority system in practice instead of only the using the control program (in the project).
+In my opinion, the graph transformation part of the course could be offered as a course of its own, so that there is more room to practice all features of GROOVE.
+
+\subsubsection{The Project}
+
+I found the project to be a great addition to the course.  It is one thing to see and work on different small problems, but to combine them into one big project realy helps you to understand the theory.
+During the project, it was challenging to come up with solutions which are not only clear and elegant, but also efficient in terms of resources.
+
+\vspace{6pt}
+
+One challenge in modelling pentago, is creating atomic rules which check for a draw. If the game recognizes one player posessing a row of five, it must be sure that the other players don't also possess such a row, before appointing the first player as the winner.
+This challenge has been addressed by making the winner and draw graph conditions abstract.
+Multiple players matching a winner rule simulthaneously has been addressed by making use of quantifiers.
+I also found it interesting to perform a formal evaluation on the performance of the strategies. While i have read about Monte Carlo simulations in the past, i have not put it into practice until now.
+Because of the trade-off between elegancy and performance, in my opinion the main control program has become a bit complex.
+While i have structured the program into functions, i think it would be more elegant to capture more concepts about the end-game in rules, however when rules become complex, they slow down quickly.
+If there was more time, we could have create more complex strategies which involve smart block rotation, but nevertheless i am happy with the performance of our smart strategy.
+\vspace{6pt}
+
+I have learned much during this course, and i would choose this course again if i had to reconsider it.
