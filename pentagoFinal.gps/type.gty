@@ -26,31 +26,10 @@
         </node>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>type:Space</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
                 <string>right</string>
             </attr>
             <attr name="layout">
-                <string>500 0 385 181 509 200 509 200 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>up</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 385 181 509 200 509 200 11</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>upleft</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 385 181 509 200 509 200 11</string>
+                <string>500 0 385 181 509 200 385 181 11</string>
             </attr>
         </edge>
         <edge from="n0" to="n0">
@@ -58,27 +37,33 @@
                 <string>upright</string>
             </attr>
             <attr name="layout">
-                <string>500 0 385 181 509 200 509 200 11</string>
+                <string>500 0 385 181 509 200 385 181 11</string>
             </attr>
         </edge>
-        <edge from="n1" to="n1">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>type:Player</string>
+                <string>type:Space</string>
             </attr>
         </edge>
-        <edge from="n1" to="n1">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>flag:strategy1</string>
+                <string>up</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 385 181 509 200 385 181 11</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>upleft</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 385 181 509 200 385 181 11</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
                 <string>flag:strategy2</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>in=1:out=1:nextPlayer</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -91,6 +76,16 @@
                 <string>marble</string>
             </attr>
         </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Player</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>in=1:out=1:nextPlayer</string>
+            </attr>
+        </edge>
         <edge from="n1" to="n2">
             <attr name="label">
                 <string>finished</string>
@@ -99,9 +94,24 @@
                 <string>670 -28 221 182 222 60 11</string>
             </attr>
         </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>flag:strategy1</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>draw</string>
+            </attr>
+        </edge>
         <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Game</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>winner</string>
             </attr>
         </edge>
         <edge from="n2" to="n1">
@@ -112,24 +122,14 @@
                 <string>467 -44 222 60 221 182 11</string>
             </attr>
         </edge>
-        <edge from="n2" to="n3">
+        <edge from="n3" to="n3">
             <attr name="label">
-                <string>draw</string>
-            </attr>
-        </edge>
-        <edge from="n2" to="n3">
-            <attr name="label">
-                <string>winner</string>
+                <string>out=1:string:name</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
             <attr name="label">
                 <string>type:Finished</string>
-            </attr>
-        </edge>
-        <edge from="n3" to="n3">
-            <attr name="label">
-                <string>out=1:string:name</string>
             </attr>
         </edge>
     </graph>

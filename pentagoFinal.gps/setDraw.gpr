@@ -14,14 +14,14 @@
                 <string>498 152 52 18</string>
             </attr>
         </node>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>type:Game</string>
-            </attr>
-        </edge>
         <edge from="n0" to="n1">
             <attr name="label">
                 <string>new:draw</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Game</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

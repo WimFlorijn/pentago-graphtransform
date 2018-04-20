@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="strategy.add2threeLeft">
+    <graph role="rule" edgeids="false" edgemode="directed" id="strategy.add2threeRight">
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n10">
             <attr name="layout">
-                <string>628 539 35 18</string>
+                <string>624 523 35 18</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>613 334 51 36</string>
+                <string>621 398 51 36</string>
             </attr>
         </node>
         <node id="n1">
@@ -36,7 +36,7 @@
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>343 331 38 18</string>
+                <string>1002 176 38 18</string>
             </attr>
         </node>
         <edge from="n10" to="n10">
@@ -51,22 +51,22 @@
         </edge>
         <edge from="n0" to="n0">
             <attr name="label">
-                <string>type:Player</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n0">
-            <attr name="label">
                 <string>flag:strategy2</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n3">
-            <attr name="label">
-                <string>marble</string>
             </attr>
         </edge>
         <edge from="n0" to="n4">
             <attr name="label">
+                <string>new:marble</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
                 <string>marble</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Player</string>
             </attr>
         </edge>
         <edge from="n0" to="n2">
@@ -74,19 +74,19 @@
                 <string>marble</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
+        <edge from="n0" to="n3">
             <attr name="label">
-                <string>new:marble</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>type:Space</string>
+                <string>marble</string>
             </attr>
         </edge>
         <edge from="n1" to="n2">
             <attr name="label">
                 <string>?x</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Space</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -99,14 +99,14 @@
                 <string>?x[right,up,upleft,upright]</string>
             </attr>
         </edge>
-        <edge from="n3" to="n3">
-            <attr name="label">
-                <string>type:Space</string>
-            </attr>
-        </edge>
         <edge from="n3" to="n4">
             <attr name="label">
                 <string>?x</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>type:Space</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -119,14 +119,14 @@
                 <string>not:</string>
             </attr>
         </edge>
+        <edge from="n11" to="n4">
+            <attr name="label">
+                <string>marble</string>
+            </attr>
+        </edge>
         <edge from="n11" to="n11">
             <attr name="label">
                 <string>type:Player</string>
-            </attr>
-        </edge>
-        <edge from="n11" to="n1">
-            <attr name="label">
-                <string>marble</string>
             </attr>
         </edge>
     </graph>

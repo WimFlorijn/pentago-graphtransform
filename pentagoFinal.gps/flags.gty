@@ -31,7 +31,12 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>type:Space</string>
+                <string>flag:place8</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>flag:place4</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -46,22 +51,7 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>flag:place3</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>flag:place4</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>flag:place5</string>
-            </attr>
-        </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>flag:place6</string>
+                <string>type:Space</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -71,7 +61,17 @@
         </edge>
         <edge from="n1" to="n1">
             <attr name="label">
-                <string>flag:place8</string>
+                <string>flag:place6</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>flag:place5</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>flag:place3</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph role="rule" edgeids="false" edgemode="directed" id="winner_rdiagonal">
+    <graph role="rule" edgeids="false" edgemode="directed" id="winner_vertical">
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -36,25 +36,20 @@
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>627 398 35 18</string>
+                <string>622 393 35 18</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>767 286 11 18</string>
+                <string>753 286 11 18</string>
             </attr>
         </node>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>type:Player</string>
-            </attr>
-        </edge>
-        <edge from="n0" to="n2">
+        <edge from="n0" to="n1">
             <attr name="label">
                 <string>marble</string>
             </attr>
         </edge>
-        <edge from="n0" to="n3">
+        <edge from="n0" to="n2">
             <attr name="label">
                 <string>marble</string>
             </attr>
@@ -64,14 +59,19 @@
                 <string>marble</string>
             </attr>
         </edge>
-        <edge from="n0" to="n4">
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Player</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n3">
             <attr name="label">
                 <string>marble</string>
             </attr>
         </edge>
-        <edge from="n0" to="n1">
+        <edge from="n0" to="n6">
             <attr name="label">
-                <string>marble</string>
+                <string>at</string>
             </attr>
         </edge>
         <edge from="n0" to="n7">
@@ -79,9 +79,9 @@
                 <string>new:finished</string>
             </attr>
         </edge>
-        <edge from="n0" to="n6">
+        <edge from="n0" to="n4">
             <attr name="label">
-                <string>at</string>
+                <string>marble</string>
             </attr>
         </edge>
         <edge from="n1" to="n1">
@@ -91,7 +91,7 @@
         </edge>
         <edge from="n1" to="n2">
             <attr name="label">
-                <string>upright</string>
+                <string>up</string>
             </attr>
         </edge>
         <edge from="n2" to="n2">
@@ -101,7 +101,7 @@
         </edge>
         <edge from="n2" to="n3">
             <attr name="label">
-                <string>upright</string>
+                <string>up</string>
             </attr>
         </edge>
         <edge from="n3" to="n3">
@@ -111,7 +111,7 @@
         </edge>
         <edge from="n3" to="n4">
             <attr name="label">
-                <string>upright</string>
+                <string>up</string>
             </attr>
         </edge>
         <edge from="n4" to="n4">
@@ -121,7 +121,7 @@
         </edge>
         <edge from="n4" to="n5">
             <attr name="label">
-                <string>upright</string>
+                <string>up</string>
             </attr>
         </edge>
         <edge from="n5" to="n5">

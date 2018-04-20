@@ -19,14 +19,14 @@
                 <string>type:Finished</string>
             </attr>
         </edge>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>type:Game</string>
-            </attr>
-        </edge>
         <edge from="n1" to="n0">
             <attr name="label">
                 <string>winner</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Game</string>
             </attr>
         </edge>
     </graph>
