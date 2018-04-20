@@ -13,12 +13,6 @@ In each design the following properties were used:
 \item A "marble" edge from a Player to a Space indicates that a Player has placed a marble on that Space.
 \end{itemize}
 
-\begin{figure}[!h]
-  \includegraphics[scale=0.5,clip]{Images/type1.png}
-  \caption{Types overview}
-  \label{fig:type1}
-\end{figure}
-
 Also the following rule names were used:
 
 \begin{itemize}
@@ -130,7 +124,7 @@ There is more structure in the pentago model than in the pentagoXY model. Dynami
 The addition of the Block node nicely captures the notion of the $3*3$ blocks of the game. And as a bonus it also made it a lot better to analyze with Groove.
 Using the Next type to abstract away from the directions made it possible to nicely capture the notion of 5-in-a-row for the "winner" rule. However the added complexity in the model also proved to be a bottleneck in analyzing the system.
 
-\subsection{Pure Graph Pentago}
+\subsection{PenagoFinal}
 
 \begin{figure}[!h]
     \centering
@@ -197,6 +191,6 @@ The seperation of the winning conditions should be seen as a trade-off between s
 
 \vspace{6pt}
 
-While this model is less abstract and thus less scalable than the pentago models described in sections \ref{pego_and_pentago} and \ref{pentagoxy}, the fact that it is a pure graph representation makes the model design more clear for users.
+While this model is less abstract and thus less scalable than the pentago models described in sections \ref{pego_and_pentago} and \ref{pentagoxy}, the fact that it is a more graph oriented representation makes the model design more clear for users.
 Furthermore the usage of edges and node identifiers enable quick matching, which results in a better performance when exploring the state space.
 For these reasons this model has been chosen to research smart player strategies.
