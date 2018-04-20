@@ -58,19 +58,14 @@ try {
 			try{
 			add2oneLeft|add2oneRight;
 		}else{
-			try{
-				midBlock;
-			}
-			else{
-				placeMarble;
-			}
+			midBlock;
 		}
 	}
 }
 }
 }
 \end{lstlisting}
-The function "pm" (short for place marble) first tries to match one of the rules to extend 4-in-a-row, then for 3 and so on. If no row can be extended the "midBlock" rule  places a marble in the center of a block. If none of these rules can be matched a random marble is placed somewhere on a free spot.
+The function "pm" (short for place marble) first tries to match one of the rules to extend 4-in-a-row, then for 3 and so on. If no row can be extended the "midBlock" rule  places a marble in the center of a block. If none of these smart rules can be matched a random marble is placed somewhere on a free spot from the main control program.
 
 \vspace{6pt}
 
@@ -78,8 +73,8 @@ To make sure that a player uses its appointed strategy, the "game\_progress" con
 The "executePlace" function first tries to match strategy rules by calling the "pm" function of the strategy. If none of these rules match, either because the player has no strategy flag or because the strategy is exhausted, then it will try to match the general "placeMarble" rule. 
 In our case this is ultimately not necessary but it ensures that the game will always progress in case of a faulty algorithm
 
-\subsubsection{The graph production systems}
-This section describes the special graph production systems (also called rules) for executing the strategy.
+\subsubsection{The rules}
+This section describes the special rules which have been composed as part of the strategy.
 
 \begin{figure}[!h]
   \includegraphics[scale=0.42,clip]{Images/twocombined.png}
@@ -87,7 +82,7 @@ This section describes the special graph production systems (also called rules) 
   \label{fig:twocombined}
 \end{figure}
 
-The most interesting rule is the extending of an existing row. Edges are one directional, because of this we get two rules for this situation: one for placing a marble at the "beginning" end of the row and one to add to the "end" of the row. Depicted is the rule for extending a row of length 2. Similar rules have been made for rows of length four, two and one.\\
+The most interesting rule is the extending of an existing row. Edges are one directional, because of this we get two rules for this situation: one for placing a marble at the "beginning" end of the row and one to add to the "end" of the row. Depicted is the rule for extending a row of length 2. Similar rules have been made for rows of length four, three and one.\\
 These rows' can be in 4 different directions. To prevent a blowup in the number of rules we chose to use a wildcart for the direction edges, that have to match with "up", "down", "downleft" or "downright".
 This does make the matching somewhat slower, since these rules are harder to match. However we feel it is justified because otherwise we would need 4 times the 4 rules to model each direction.
 
