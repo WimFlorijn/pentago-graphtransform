@@ -72,15 +72,17 @@ try {
 \end{lstlisting}
 The function "pm" (short for place marble) first tries to match one of the rules to extend 4-in-a-row, then for 3 and so on. If no row can be extended the "midBlock" rule  places a marble in the center of a block. If none of these rules can be matched a random marble is placed somewhere on a free spot.
 
+\vspace{6pt}
+
 To make sure that a player uses its appointed strategy, the "game\_progress" control program in the main package was also updated.
 The "executePlace" function first tries to match strategy rules by calling the "pm" function of the strategy. If none of these rules match, either because the player has no strategy flag or because the strategy is exhausted, then it will try to match the general "placeMarble" rule. 
 In our case this is ultimately not necessary but it ensures that the game will always progress in case of a faulty algorithm
 
 \subsubsection{The graph production systems}
-This section describes the special graph production systems(also called rules) for executing the strategy.
+This section describes the special graph production systems (also called rules) for executing the strategy.
 
 \begin{figure}[!h]
-  \includegraphics[scale=0.5,clip]{Images/twocombined.png}
+  \includegraphics[scale=0.42,clip]{Images/twocombined.png}
   \caption{Two ways of extending a row}
   \label{fig:twocombined}
 \end{figure}
@@ -89,9 +91,13 @@ The most interesting rule is the extending of an existing row. Edges are one dir
 These rows' can be in 4 different directions. To prevent a blowup in the number of rules we chose to use a wildcart for the direction edges, that have to match with "up", "down", "downleft" or "downright".
 This does make the matching somewhat slower, since these rules are harder to match. However we feel it is justified because otherwise we would need 4 times the 4 rules to model each direction.
 
+\vspace{6pt}
+
 If there is no existing row to extend, the algorithm tries to place a marble in the center space of a block. This can easily be done by matching on the "place5" flag that is already present on the board. This is done in the "midBlock" rule.
 
-The algorithm has no strategy for turning blocks, there are no additional rules or control programs needed for this part of the game.
+\vspace{6pt}
+
+The algorithm has no strategy for turning sub-boards: there are no additional rules or control programs needed for this part of the game.
 
 
 \subsection{Results}
@@ -101,8 +107,31 @@ Therefore we have decided to perform a Monte Carlo simulation. A Monte Carlo sim
 
 \vspace{6pt}
 
-TODO
+We set up an experiment with two players: one that uses the default random stragy, while the other uses the smart strategy. 
+Then we execute one random instance of pentago by using the linear-random exploration strategy. This exploration strategy lists all available rule applications, and choses one randomly.
+When the game ends, the number of explored transitions, as well as the result (win/draw) and the optional winner are retrieved.
+The number of explored transitions indicates how many steps are taken before the game ends.
+To perform a covering Monte Carlo simulation, this process is repeated a total of 200 times.
 
-To determine the number of iterations needed to meet these requirements, we use the following formula \cite{sim-modeling}:
+\vspace{6pt}
 
-%n = (zα/2 S / E ) ²
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5,clip]{Images/strategywinner}
+  \caption{The performance of strategies}
+  \label{fig:strategywinner}
+\end{figure}
+
+From the results visualized in figure \ref{fig:strategywinner} can be concluded that the random strategy wins only 4\% of the games played. A draw has not occured in this experiment.
+Obviously, there can be concluded that the smart strategy performs significantly better than the random strategy.
+
+\vspace{6pt}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5,clip]{Images/transitions}
+  \caption{The number of transitions needed for a strategy}
+  \label{fig:transitions}
+\end{figure}
+
+From the average transitions can be concluded that the smart strategy finishes the game quicker than the random strategy. Each placeMarble, rotateBoard and nextPlayer rule execution counts as a transition. The smart strategy wins in on average 20 transitions, while the random strategy takes 31 to win. The results are visualized in \ref{fig:transitions}.
