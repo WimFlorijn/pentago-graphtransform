@@ -1,4 +1,5 @@
 \section{Conclusion}
+\label{Conclusion}
 
 With this project we have shown that it is possible to model the game Pentago as a graph transformation system.
 A compromise had to be found between the amount of abstraction and the complexity in analysis. The use of abstract directions for 5-in-a-row proved to be a powerful modeling strategy, but was also slower to analyze. 
@@ -6,4 +7,4 @@ Rotating blocks was also modeled using different techniques. Rotating by changin
 
 In developing player strategies there was again the trade-off between abstraction and analysis. Using abstract directions to determine where the longest row of marbles is is harder to match. However it does prevent having to have a copy of each rule for each separate direction.
 Using a Monte Carlo analysis we did show that our strategy performed better than playing random. This is not very surprising.
-Unfortunately we could not generate the entire state space for the game. Therefore it was difficult to do more concrete analysis on the game. E.g. determine if we could always enforce a win or a draw with certain strategies.
+Unfortunately we could not generate the entire state space for the game. Therefore it was difficult to perform a more concrete analysis on the game. E.g. determine if we could always enforce a win or a draw with certain strategies.
