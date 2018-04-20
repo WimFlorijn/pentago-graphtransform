@@ -4,11 +4,11 @@ import xml.etree.ElementTree
 import re
 
 generator_location = "C://Users//Wim//Downloads//groove-5_7_2-bin//groove-5_7_2//bin//generator.jar"
-gps_location = "C://Users//Wim//Documents//Universiteit//Year5Module3//SoftwareScience//GraphTransformProject//pentago_wim.gps"
+gps_location = "C://Users//Wim//Documents//Universiteit//Year5Module3//SoftwareScience//GraphTransformProject//pentagoFinal.gps"
 output_file = "C://Users//Wim//Documents//Universiteit//Year5Module3//SoftwareScience//GraphTransformProject//output.txt"
-result_file = "C://Users//Wim//Documents//Universiteit//Year5Module3//SoftwareScience//GraphTransformProject//result.csv"
+result_file = "C://Users//Wim//Documents//Universiteit//Year5Module3//SoftwareScience//GraphTransformProject//result1.csv"
 
-execution_amount = 200
+execution_amount = 5
 p = True
 
 def write_result(result):
@@ -31,8 +31,7 @@ def explore():
         for index, item in enumerate(splitted_cmd_output):
             if item.decode("utf-8") == 'States:':
                 single_result['States'] = splitted_cmd_output[index + 1].decode("utf-8")
-        for index, item in enumerate(splitted_cmd_output):
-            if item.decode("utf-8") == 'Transitions:':
+            elif item.decode("utf-8") == 'Transitions:':
                 single_result['Transitions'] = splitted_cmd_output[index + 1].decode("utf-8")
 
         root = xml.etree.ElementTree.parse(output_file).getroot()
