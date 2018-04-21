@@ -71,7 +71,6 @@ The function "pm" (short for place marble) first tries to match one of the rules
 
 To make sure that a player uses its appointed strategy, the "game\_progress" control program in the main package was also updated.
 The "executePlace" function first tries to match strategy rules by calling the "pm" function of the strategy. If none of these rules match, either because the player has no strategy flag or because the strategy is exhausted, then it will try to match the general "placeMarble" rule. 
-In our case this is ultimately not necessary but it ensures that the game will always progress in case of a faulty algorithm
 
 \subsubsection{The rules}
 This section describes the special rules which have been composed as part of the strategy.
