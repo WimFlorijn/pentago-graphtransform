@@ -6,5 +6,6 @@ A compromise had to be found between the amount of abstraction and the complexit
 Rotating blocks was also modeled using different techniques. Rotating by changing the attributes of the coordinates of the spaces proved to be very efficient. Encoding where marbles have to move to using edges is easier to match and therefore faster in analysis.
 
 In developing player strategies there was again the trade-off between abstraction and analysis. Using abstract directions to determine where the longest row of marbles is is harder to match. However it does prevent having to have a copy of each rule for each separate direction.
-Using a Monte Carlo analysis we did show that our strategy performed better than playing random. This is not very surprising.
+It could be fixed by optimizing the GROOVE search strategy.
+Using a Monte Carlo analysis we did show that our smart strategy performed better in terms of win percentage than playing random. The smart strategy also takes generally less transformation to win. This is not very surprising.
 Unfortunately we could not generate the entire state space for the game. Therefore it was difficult to perform a more concrete analysis on the game. E.g. determine if we could always enforce a win or a draw with certain strategies.
