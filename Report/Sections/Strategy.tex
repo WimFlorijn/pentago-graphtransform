@@ -81,7 +81,7 @@ This section describes the special rules which have been composed as part of the
   \label{fig:twocombined}
 \end{figure}
 
-The most interesting rule is the extending of an existing row. Edges are one directional, because of this we get two rules for this situation: one for placing a marble at the "beginning" end of the row and one to add to the "end" of the row. Depicted is the rule for extending a row of length 2. Similar rules have been made for rows of length four, three and one.\\
+The most interesting rule is the extending of an existing row, see figure \ref{fig:twocombined}. Edges are one directional, because of this we get two rules for this situation: one for placing a marble at the "beginning" of the row and one to add to the "end" of the row. Depicted are the rules for extending a row of length 2. Similar rules have been made for rows of length four, three and one.\\
 These rows' can be in 4 different directions. To prevent a blowup in the number of rules we chose to use a wildcart for the direction edges, that have to match with "up", "down", "downleft" or "downright".
 This does make the matching somewhat slower, since these rules are harder to match. However we feel it is justified because otherwise we would need 4 times the 4 rules to model each direction.
 
@@ -95,8 +95,8 @@ The algorithm has no strategy for turning sub-boards: there are no additional ru
 
 
 \subsection{Results}
-To be able to draw a conclusion about whether our strategy performs well, we want to formally evaluate its performance.
-Because the game is relatively complex, it is impossible to generate the entire state space of the game, and determine the complete win rate of the naive and the smart strategies.
+To be able to draw a conclusion about the our strategy, we want to evaluate its performance.
+The game is complex and it is very hard to generate the entire state space of the game(given consumer level hardware), and determine the complete win rate of the naive and the smart strategies.
 Therefore we have decided to perform a Monte Carlo simulation. A Monte Carlo simulation produces distributions of possible outcome values.
 
 \vspace{6pt}
