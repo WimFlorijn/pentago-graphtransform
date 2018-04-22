@@ -6,7 +6,7 @@ In each design the following properties were used:
 
 \begin{itemize}
 \item The type "Game" is used to model the the game itself.
-\item A type "Player" is used to model a player of the game. The game node features an "currentPlayer" edge to the player whoms turn it is.
+\item A type "Player" is used to model a player of the game. The game node features an "currentPlayer" edge to the player whose turn it is.
 \item A type "Space" is used to model a space on the board where a marble can be placed. A marble placement of a player on a space is defined as an "marble" edge from the player node to the space node.
 \item An edge "currentPlayer", from the Game to a Player, models whose turn it is.
 \item "nextPlayer" Edges between Player nodes indicate the order in which the Players have to play.
@@ -18,7 +18,7 @@ Also the following rule names were used:
 \begin{itemize}
 \item "placeMarble": A rule in which the currentPlayer can place a marble on the board.
 \item "rotateClockwise" and "rotateCounterClockwise": The rules that model the rotation of a Block on the board.
-\item "nextPlayer": The rule that provides the turn-taking mechanism of the palers. The turn taking mechanism has been defined as a graph transformation.
+\item "nextPlayer": The rule that provides the turn-taking mechanism of the players. The turn taking mechanism has been defined as a graph transformation.
 When a player has finished its turn, the currentPlayer edge from the game node is shifted to the player which is connected to by the nextPlayer edge.
 The global graph transformation defined for the turn taking mechanism is displayed in figure \ref{fig:turn}.
 \end{itemize}
@@ -48,7 +48,7 @@ Rotating the block was done by changing the coordinate attributes of the Spaces 
 
 To model the situation where a Player has won, the Direction type was introduced. The Direction node has a $dx$ and a $dy$ attribute.
 This way the direction horizontal ($dx=1,dy=0$), vertical ($dx=0,dy=1$) and both diagonal ($dx=1,dy=1$ and $dx=1,dy=-1$) were modeled. 
-In the "winner" rule 5 Spaces have to have a marble of the same Player and be spaced repectively $0,1,2,3,4$ times $dx$ and $dy$ for a specific direction.
+In the "winner" rule 5 Spaces have to have a marble of the same Player and be spaced respectively $0,1,2,3,4$ times $dx$ and $dy$ for a specific direction.
 
 \vspace{6pt}
 
@@ -187,7 +187,7 @@ When either a winner or a draw is detected, a \textit{winner} or \textit{draw} e
 
 \vspace{6pt}
 
-The seperation of the winning conditions should be seen as a trade-off between scalability and performance: while having 4 individual winning conditions decreases the expandability of the game rules, we have chosen to implement it this way because it decreases the complexity of the computations needed when looking for a winner significantly.
+The separation of the winning conditions should be seen as a trade-off between scalability and performance: while having 4 individual winning conditions decreases the expandability of the game rules, we have chosen to implement it this way because it decreases the complexity of the computations needed when looking for a winner significantly.
 
 \vspace{6pt}
 

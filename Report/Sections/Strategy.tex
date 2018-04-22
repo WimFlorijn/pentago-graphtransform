@@ -16,7 +16,7 @@ If there isn't a row,or if there are no rows that can be extended a new row will
 \item Place a marble in a center position
 \end{itemize}
 Both rules will be discussed in the rules paragraph.
-In order to make decisions it first tries to look for a row of 4 marbles and places one marble at either possible end. If this is not available it looks for a row of 3. This patern repeats till the length of the row is 1.
+In order to make decisions it first tries to look for a row of 4 marbles and places one marble at either possible end. If this is not available it looks for a row of 3. This pattern repeats till the length of the row is 1.
 If it can not find a free Space adjacent to a marble of its own, then it will try to occupy a Space in the center of a block.
 If none of the strategy rules can be matched, the system will fall back by placing a marble in a random empty Space.
 This algorithm has been implemented in the control program.
@@ -101,7 +101,7 @@ Therefore we have decided to perform a Monte Carlo simulation. A Monte Carlo sim
 
 \vspace{6pt}
 
-We set up an experiment with two players: one that uses the default random stragy, while the other uses the smart strategy. 
+We set up an experiment with two players: one that uses the default random strategy, while the other uses the smart strategy. 
 Then we execute one random instance of pentago by using the linear-random exploration strategy. This exploration strategy lists all available rule applications, and choses one randomly.
 When the game ends, the number of explored transitions, as well as the result (win/draw) and the optional winner are retrieved.
 The number of explored transitions indicates how many steps are taken before the game ends.
@@ -116,7 +116,7 @@ To perform a covering Monte Carlo simulation, this process is repeated a total o
   \label{fig:strategywinner}
 \end{figure}
 
-From the results visualized in figure \ref{fig:strategywinner} can be concluded that the random strategy wins only 4\% of the games played. A draw has not occured in this experiment.
+From the results visualized in figure \ref{fig:strategywinner} can be concluded that the random strategy wins only 4\% of the games played. A draw has not occurred in this experiment.
 Obviously, there can be concluded that the smart strategy performs significantly better than the random strategy.
 
 \vspace{6pt}
